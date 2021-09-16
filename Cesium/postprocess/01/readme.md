@@ -65,7 +65,8 @@ void main(){
 }
 ```
 这个处理节点没有做任何加工处理，只是简单的复制场景。从中可以看出，一个基本的后期处理节点包含两大部分：
- **(1) fragmentShader** 片段着色器代码：对每一帧的渲染结果进行加工处理。简单解释一下内置变量：
+
+**(1) fragmentShader** 片段着色器代码：对每一帧的渲染结果进行加工处理。简单解释一下内置变量：
 * `colorTexture` 整个场景的颜色纹理或者前一个后期处理结果颜色纹理；
 * `colorTextureDimensions` 颜色纹理尺寸，x为宽度，y为高度；
 
@@ -417,11 +418,13 @@ class EdgePostProcessStage extends Cesium.PostProcessStage {
 function createEdgeStage(name?: string): EdgePostProcessStage
 ```
 #### 5.1、效果视频
+
 <p>
     <video style="max-width:100%" id="video" controls="" preload="none" poster="图1.jpg">
         <source id="mp4" src="http://mpvideo.qpic.cn/0b78smaaaaaajiafltbwrjqvbe6dacjqaaaa.f10002.mp4?dis_k=163a8339688b97cfa188785c5cba3b88&dis_t=1631759429&vid=wxv_2036059485672210433&format_id=10002&support_redirect=0&mmversion=false" type="video/mp4">
     </video>
 </p>
+
 #### 5.2、示例代码
 ```js
 import createEdgeStage from "./createEdgeStage";
