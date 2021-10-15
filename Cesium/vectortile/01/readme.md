@@ -61,4 +61,4 @@ var layer=viewer.imageryLayers.addImageryProvider(provider);
 * 2、支持以注记的方式显示关键属性，如地名等。
 
 ### 欢迎关注微信公众号【三维网格3D】，第一时间获取最新文章 ###
-![微信公众号【三维网格3D】](../../../assets/微信公众号【三维网格3D】.png)
+![微信公众号【三维网格3D】](http://os.mesh-3d.com/articles/微信公众号【三维网格3D】.png)

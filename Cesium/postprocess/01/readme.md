@@ -529,4 +529,4 @@ viewer.postProcessStages.add(cesiumStage);
 ```
 
 ### 源码获取：关注微信公众号【三维网格3D】，回复‘3D描边’（不区分大小写） ###
-![微信公众号【三维网格3D】](../../../assets/微信公众号【三维网格3D】.png)
+![微信公众号【三维网格3D】](http://os.mesh-3d.com/articles/微信公众号【三维网格3D】.png)
