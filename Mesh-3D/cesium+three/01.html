@@ -1,0 +1,904 @@
+<!DOCTYPE html><html><head>
+      <title>01</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\mesh-000\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.1\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="cesium%E5%92%8Cthreejs%E7%BB%93%E5%90%88%E7%9A%845%E4%B8%AA%E6%96%B9%E6%A1%88pk%E5%93%AA%E4%B8%AA%E8%83%9C%E5%87%BA">Cesium&#x548C;Three.js&#x7ED3;&#x5408;&#x7684;5&#x4E2A;&#x65B9;&#x6848;PK&#xFF0C;&#x54EA;&#x4E2A;&#x80DC;&#x51FA;&#xFF1F;</h2>
+
+<p><code>CesiumJS</code>&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x3001;&#x514D;&#x8D39;&#x7684;&#x4E09;&#x7EF4;&#x5730;&#x56FE;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;<code>Three.js</code>&#x662F;&#x4E00;&#x4E2A;&#x4E5F;&#x5F00;&#x6E90;&#x3001;&#x514D;&#x8D39;&#x7684;3D&#x6E32;&#x67D3;&#x6846;&#x67B6;&#xFF0C;&#x4E24;&#x8005;&#x90FD;&#x662F;&#x57FA;&#x4E8E;WebGL&#x6280;&#x672F;&#x3001;&#x4F7F;&#x7528;JavaScript&#x5F00;&#x53D1;&#x7684;Web&#x524D;&#x7AEF;&#x4E09;&#x7EF4;&#x53EF;&#x89C6;&#x5316;&#x6846;&#x67B6;&#xFF0C;&#x5728;&#x56FD;&#x5185;&#x5916;&#x5E94;&#x7528;&#x975E;&#x5E38;&#x5E7F;&#x6CDB;&#x3002;&#x672C;&#x7BC7;&#x6211;&#x4EEC;&#x6765;&#x804A;&#x804A;<code>Cesium</code>+<code>Three.js</code>&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x7ED3;&#x5408;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x6548;&#x679C;&#x6765;&#x5206;&#x6790;&#x5404;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x4F18;&#x70B9;&#x548C;&#x7F3A;&#x70B9;&#xFF0C;&#x4EE5;&#x4FBF;&#x9879;&#x76EE;&#x4E2D;&#x5FEB;&#x901F;&#x505A;&#x51FA;&#x6280;&#x672F;&#x8DEF;&#x7EBF;&#x548C;&#x65B9;&#x6848;&#x9009;&#x62E9;&#x3002;</p>
+<h3 class="mume-header" id="1-cesium%E5%92%8Cthreejs%E7%AE%80%E5%8D%95%E5%AF%B9%E6%AF%94">1&#x3001;Cesium&#x548C;Three.js&#x7B80;&#x5355;&#x5BF9;&#x6BD4;</h3>
+
+<p><code>Cesium</code>&#x53EF;&#x89C6;&#x5316;&#x5185;&#x5BB9;&#x4EE5;&#x5730;&#x7406;&#x7A7A;&#x95F4;&#x6570;&#x636E;&#x4E3A;&#x4E3B;&#xFF0C;&#x5982;&#x536B;&#x661F;&#x5F71;&#x50CF;&#x3001;&#x5730;&#x5F62;&#x3001;&#x57CE;&#x5E02;&#x7EA7;&#x4E09;&#x7EF4;&#x6A21;&#x578B;&#x7B49;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x548C;&#x7A7A;&#x95F4;&#x8303;&#x56F4;&#x90FD;&#x975E;&#x5E38;&#x5927;&#xFF0C;&#x800C;&#x5BF9;&#x7CBE;&#x5EA6;&#x8981;&#x6C42;&#x66F4;&#x9AD8;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x6838;&#x5FC3;&#x4F18;&#x52BF;&#x662F;&#x9AD8;&#x6027;&#x80FD;&#x3001;&#x9AD8;&#x7CBE;&#x5EA6;&#x3001;&#x89C4;&#x8303;&#x6807;&#x51C6;&#xFF0C;&#x89C4;&#x8303;&#x6807;&#x51C6;&#x4F53;&#x73B0;&#x5728;&#x9075;&#x5FAA;&#x884C;&#x4E1A;&#x6807;&#x51C6;&#x548C;&#x4E3B;&#x5BFC;&#x5236;&#x5B9A;3D Tiles&#x6807;&#x51C6;&#x4E0A;&#x3002;</p>
+<p><img src="./cesium%E5%AE%98%E7%BD%91.jpg" alt="&#x5B98;&#x7F51;"></p>
+<p><code>Three.js</code>&#x7684;&#x76EE;&#x6807;&#x5219;&#x662F;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x3001;&#x8F7B;&#x91CF;&#x7EA7;&#x3001;&#x8DE8;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x901A;&#x7528;3D&#x6E32;&#x67D3;&#x6846;&#x67B6;&#xFF0C;&#x6838;&#x5FC3;&#x6570;&#x636E;&#x662F;3D&#x5BF9;&#x8C61;&#x548C;&#x4E09;&#x7EF4;&#x6A21;&#x578B;&#xFF0C;&#x89C6;&#x89C9;&#x5448;&#x73B0;&#x3001;&#x573A;&#x666F;&#x7EC4;&#x7EC7;&#x3001;3D&#x5BF9;&#x8C61;&#x7BA1;&#x7406;&#x3001;&#x52A8;&#x753B;&#x3001;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x7B49;&#x65B9;&#x9762;&#x6709;&#x72EC;&#x7279;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x4E14;&#x53EF;&#x4EE5;&#x4E8E;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x5F88;&#x597D;&#x7684;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x5728;&#x5927;&#x5C4F;&#x4E09;&#x7EF4;&#x5C55;&#x793A;&#x3001;&#x6E38;&#x620F;&#x3001;&#x4EFF;&#x771F;&#x7B49;&#x65B9;&#x9762;&#x5F88;&#x6709;&#x5E94;&#x7528;&#x4EF7;&#x503C;&#x3002;<br>
+<img src="./three.js%E5%AE%98%E7%BD%91.jpg" alt="&#x5B98;&#x7F51;"></p>
+<p>&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;<code>Cesium</code>&#x66F4;&#x50CF;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x7EA7;&#x9910;&#x5385;&#xFF0C;&#x4E0B;&#x5355;&#x5373;&#x53EF;&#x5750;&#x4EAB;&#x5176;&#x6210;&#xFF1B;&#x800C;<code>Three.js</code>&#x66F4;&#x50CF;&#x662F;&#x4E00;&#x4E2A;&#x53A8;&#x623F;&#xFF0C;&#x53A8;&#x5177;&#x3001;&#x98DF;&#x6750;&#x751A;&#x81F3;&#x83DC;&#x8C31;&#x90FD;&#x5907;&#x9F50;&#xFF0C;&#x5C31;&#x7B49;&#x4F60;&#x6765;&#x53D1;&#x6325;&#x53A8;&#x827A;&#x3002;</p>
+<h3 class="mume-header" id="2-%E6%8E%A2%E7%B4%A2%E8%9E%8D%E5%90%88%E4%B9%8B%E8%B7%AF">2&#x3001;&#x63A2;&#x7D22;&#x878D;&#x5408;&#x4E4B;&#x8DEF;</h3>
+
+<p>&#x5199;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x4E0D;&#x7981;&#x8981;&#x56DE;&#x671B;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x8FD9;&#x51E0;&#x5E74;&#x6267;&#x7740;&#x5730;&#x63A2;&#x7D22;&#x4E24;&#x4E2A;&#x5F15;&#x64CE;&#x878D;&#x5408;&#x7684;&#x5386;&#x7A0B;&#x3002;</p>
+<h5 class="mume-header" id="21-%E5%B0%86threejs%E5%9C%BA%E6%99%AF%E5%BD%93%E4%BD%9C%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD">2.1&#x3001;&#x5C06;Three.js&#x573A;&#x666F;&#x5F53;&#x4F5C;&#x6A21;&#x578B;&#x52A0;&#x8F7D;</h5>
+
+<p>&#x65E9;&#x5728;2017&#x5E74;&#x521D;&#xFF0C;&#x63A5;&#x89E6;<code>Cesium</code>&#x8FD1;&#x4E24;&#x5E74;&#xFF0C;&#x53C8;&#x5199;&#x4E86;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;<code>Three.js</code>&#xFF0C;&#x5BF9;<code>Cesium</code>&#x53EA;&#x652F;&#x6301;gltf&#x683C;&#x5F0F;&#x6A21;&#x578B;&#x8FD9;&#x4E00;&#x70B9;&#x4E0D;&#x6EE1;&#xFF0C;&#x770B;&#x5230;<code>Three.js</code>&#x793E;&#x533A;&#x6709;&#x5F88;&#x591A;&#x6A21;&#x578B;&#x683C;&#x5F0F;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x4FBF;&#x840C;&#x751F;&#x4E86;<code>Cesium</code>&#x548C;<code>Three.js</code>&#x7ED3;&#x5408;&#x7684;&#x60F3;&#x6CD5;&#x3002;</p>
+<p>&#x6298;&#x817E;&#x5927;&#x6982;&#x4E24;&#x5468;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6848;&#xFF0C;&#x5148;&#x4F7F;&#x7528;<code>GLTFExporter</code>&#x5C06;<code>Three.js</code>&#x573A;&#x666F;&#x5BFC;&#x51FA;&#x4E3A;gltf&#x683C;&#x5F0F;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;gltf&#x6A21;&#x578B;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x603B;&#x7B97;&#x662F;&#x628A;<code>Three.js</code>&#x89E3;&#x6790;&#x7684;&#x6A21;&#x578B;&#x52A0;&#x8F7D;&#x5230;<code>Cesium</code>&#x573A;&#x666F;&#x4E2D;&#x4E86;&#x3002;</p>
+<p>&#x5F88;&#x5FEB;&#x5C31;&#x53D1;&#x73B0;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x7684;&#x81F4;&#x547D;&#x7F3A;&#x70B9;&#xFF1A;&#x52A0;&#x8F7D;&#x6781;&#x6162;&#xFF0C;&#x4E14;&#x4E0D;&#x652F;&#x6301;&#x52A8;&#x753B;&#xFF01;</p>
+<h5 class="mume-header" id="22-%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8Ecesium%E7%9A%84threejs%E6%B8%B2%E6%9F%93%E5%99%A8">2.2&#x3001;&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;Cesium&#x7684;Three.js&#x6E32;&#x67D3;&#x5668;</h5>
+
+<p>&#x6CA1;&#x8FC7;&#x591A;&#x4E45;&#xFF0C;&#x5F00;&#x59CB;&#x8BFB;<code>Three.js</code>&#x6E32;&#x67D3;&#x5668;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x5BF9;<code>Cesium</code>&#x5E95;&#x5C42;&#x7684;&#x4E00;&#x77E5;&#x534A;&#x89E3;&#xFF0C;&#x5FC3;&#x91CC;&#x4F3C;&#x4E4E;&#x5F88;&#x6709;&#x5E95;&#x6C14;&#x4E86;&#xFF0C;&#x5F00;&#x59CB;&#x4E86;&#x65B0;&#x7684;&#x63A2;&#x7D22;&#xFF0C;&#x53C2;&#x7167;<code>Three.js</code>&#x7684;<code>WebGLRenderer</code>&#x3001;<code>CanvasRenderer</code>&#x3001;<code>SVGRenderer</code>&#xFF0C;&#x52A8;&#x624B;&#x5199;&#x4E00;&#x4E2A;<code>Cesium</code>Renderer&#xFF0C;&#x8FD8;&#x5C06;&#x6E90;&#x7801;&#x4F20;&#x5230;&#x4E86;GitHub&#xFF0C;&#x8FD8;&#x8D77;&#x4E86;&#x4E00;&#x4E2A;&#x5F88;&#x725B;&#x7684;&#x540D;&#x5B57;<code>Cesium</code>3js&#xFF08; <a href="https://github.com/MikesWei/">https://github.com/MikesWei/</a><code>Cesium</code>3js &#xFF09;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x4E0A;&#x4F20;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x3002;</p>
+<p>&#x60F3;&#x6CD5;&#x5F88;&#x5927;&#xFF0C;&#x540D;&#x5934;&#x4E5F;&#x5F88;&#x5927;&#xFF0C;&#x4E5F;&#x5B9E;&#x73B0;&#x4E86;&#x5F53;&#x65F6;&#x9884;&#x671F;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x524D;&#x9762;&#x4E00;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x7F3A;&#x70B9;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x5DF2;&#x7ECF;&#x5F25;&#x8865;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x548C;&#x771F;&#x6B63;&#x6E32;&#x67D3;&#x5668;&#x5DEE;&#x70B9;&#x4E0D;&#x662F;&#x4E00;&#x661F;&#x534A;&#x70B9;&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x90FD;&#x6CA1;&#x6709;&#x652F;&#x6301;&#x3002;</p>
+<p>&#x51E0;&#x4E2A;&#x6708;&#x540E;&#xFF0C;<code>Cesium</code>&#x5B98;&#x65B9;&#x535A;&#x5BA2;&#x4E0A;&#x90A3;&#x7BC7;&#x4ECB;&#x7ECD;<code>Cesium</code>&#x4E0E;<code>Three.js</code>&#x96C6;&#x6210;&#x65B9;&#x6CD5;&#x7684;&#x6587;&#x7AE0;( &#x300A;Integrating <code>Cesium</code> with <code>Three.js</code>&#x300B;<a href="https://cesium.com/blog/2017/10/23/integrating-cesium-with-threejs/">https://cesium.com/blog/2017/10/23/integrating-cesium-with-threejs/</a> ) &#x53D1;&#x8868;&#x4E86;&#x3002;</p>
+<h5 class="mume-header" id="23-%E5%9C%A8cesium%E5%AE%9E%E7%8E%B0threejs%E9%83%A8%E5%88%86%E6%8E%A5%E5%8F%A3">2.3&#x3001;&#x5728;Cesium&#x5B9E;&#x73B0;Three.js&#x90E8;&#x5206;&#x63A5;&#x53E3;</h5>
+
+<p>2017&#x5E74;&#x5E95;&#xFF0C;&#x6362;&#x4E86;&#x65B0;&#x5DE5;&#x4F5C;&#xFF0C;&#x6709;&#x4E2A;&#x9879;&#x76EE;&#x9700;&#x8981;&#x5C06;&#x5929;&#x6C14;&#x96F7;&#x8FBE;&#x4E09;&#x7EF4;&#x6570;&#x636E;&#x5C55;&#x793A;&#x5728;&#x4E09;&#x7EF4;&#x5730;&#x7403;&#x4E2D;&#xFF0C;&#x6700;&#x597D;&#x662F;&#x5B9E;&#x73B0;&#x4F53;&#x79EF;&#x6E32;&#x67D3;&#x3002;&#x5BFB;&#x5BFB;&#x89C5;&#x89C5;&#xFF0C;&#x6700;&#x7EC8;&#x8FD8;&#x662F;&#x5728;<code>Three.js</code>&#x793E;&#x533A;&#x627E;&#x5230;&#x4E86;&#x8D44;&#x6E90;&#x3002;&#x6709;&#x4E86;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x9A71;&#x52A8;&#xFF0C;&#x6211;&#x66F4;&#x6E05;&#x695A;&#x81EA;&#x5DF1;&#x505A;<code>Cesium</code>&#x548C;<code>Three.js</code>&#x7ED3;&#x5408;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x4E8E;&#x662F;&#x5C06;<code>Cesium</code>3js&#x4EE3;&#x7801;&#x91CD;&#x65B0;&#x6574;&#x7406;&#xFF0C;&#x653E;&#x5F03;&#x4E86;&#x5728;<code>Cesium</code>&#x4E0A;&#x4F7F;&#x7528;<code>Three.js</code>&#x6240;&#x6709;&#x529F;&#x80FD;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x751A;&#x81F3;&#x76F4;&#x63A5;&#x4E0D;&#x7528;&#x4F9D;&#x8D56;<code>Three.js</code>&#xFF0C;&#x800C;&#x662F;&#x5728;<code>Cesium</code>&#x4E2D;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;<code>Three.js</code>&#x7684;Mesh&#x548C;Material&#x7684;&#x4E00;&#x5957;&#x63A5;&#x53E3;&#x548C;&#x6E32;&#x67D3;&#x673A;&#x5236;&#xFF0C;&#x652F;&#x6301;&#x90E8;&#x5206;<code>Three.js</code>&#x5BF9;&#x8C61;&#x3002;&#x534A;&#x5E74;&#x540E;&#x5C06;&#x5176;&#x5F00;&#x6E90;&#xFF0C;&#x8FD9;&#x4FBF;&#x662F;&#x6211;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;<code>CesiumMeshVisualizer</code> &#xFF08; <a href="https://github.com/MikesWei/CesiumMeshVisualizer">https://github.com/MikesWei/CesiumMeshVisualizer</a> &#xFF09;&#x3002;&#x627F;&#x8499;&#x540C;&#x884C;&#x4E0D;&#x541D;&#x70B9;&#x8D5E;&#xFF0C;&#x76EE;&#x524D;&#x6536;&#x83B7;&#x4E86;<code>454</code>&#x4E2A;Star,<code>156</code>&#x6B21;Fork&#x3002;</p>
+<h5 class="mume-header" id="24-%E5%B0%86%E8%9E%8D%E5%90%88%E8%BF%9B%E8%A1%8C%E5%88%B0%E5%BA%95">2.4&#x3001;&#x5C06;&#x878D;&#x5408;&#x8FDB;&#x884C;&#x5230;&#x5E95;</h5>
+
+<p>2020&#x5E74;&#x590F;&#xFF0C;GIS&#x5E73;&#x53F0;&#x548C;&#x6E38;&#x620F;&#x5F15;&#x64CE;&#x878D;&#x5448;&#x73B0;&#x4E0D;&#x53EF;&#x6321;&#x7684;&#x8D8B;&#x52BF;&#xFF0C;&#x8D85;&#x56FE;&#x3001;<code>Cesium</code>&#x7B49;&#x90FD;&#x76F8;&#x7EE7;&#x63A8;&#x51FA;&#x865A;&#x5E7B;&#x5F15;&#x64CE;&#xFF08;Unreal Engine&#xFF09;&#x63D2;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x63A5;&#x5230;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x9664;&#x4E86;&#x201C;&#x9759;&#x6B62;&#x201D;&#x7684;&#x6D77;&#x91CF;&#x6570;&#x636E;&#x8C03;&#x5EA6;&#x5916;&#xFF0C;&#x573A;&#x666F;&#x4E2D;&#x201C;&#x8FD0;&#x52A8;&#x201D;&#x7684;&#x7269;&#x4F53;&#x4E5F;&#x5448;&#x6570;&#x91CF;&#x7EA7;&#x589E;&#x957F;&#xFF0C;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x9891;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x66F4;&#x65B0;&#x7684;&#x90E8;&#x4EF6;&#x7C92;&#x5EA6;&#x4E5F;&#x66F4;&#x7EC6;&#xFF0C;&#x7528;&#x6237;&#x5BF9;&#x4E09;&#x7EF4;&#x573A;&#x666F;&#x7684;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x8981;&#x6C42;&#x66F4;&#x9AD8;&#xFF0C;<code>Cesium</code>&#x5728;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x80FD;&#x529B;&#x660E;&#x663E;&#x4E0D;&#x8DB3;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x5230;<code>Three.js</code>&#x5728;&#x89E3;&#x51B3;&#x8FD9;&#x7C7B;&#x9700;&#x6C42;&#x5177;&#x6709;&#x6781;&#x5927;&#x7684;&#x6F5C;&#x529B;&#xFF0C;&#x5E76;&#x5728;2020&#x5E74;&#x5E95;&#x5B9E;&#x73B0;&#x4E86;<code>Cesium</code>&#x4E0E;<code>Three.js</code>&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x65B9;&#x6848;&#xFF0C;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x4E86;&#x57FA;&#x4E8E;<code>Cesium</code>&#x7684;<code>Three.js</code>&#x6E32;&#x67D3;&#x5668;&#xFF0C;&#x8BA9;<code>Cesium</code>&#x3001;<code>Three.js</code>&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x6D51;&#x7136;&#x4E00;&#x4F53;&#xFF01;<br>
+<img src="./%E6%A1%88%E4%BE%8B%E4%B8%80(%E5%B0%81%E9%9D%A2).jpg" alt="&#x6848;&#x4F8B;&#x4E00;&#x2014;&#x2014;&#x573A;&#x666F;&#x6784;&#x5EFA;&#x5E73;&#x53F0;"></p>
+<h3 class="mume-header" id="3-%E6%96%B9%E6%A1%88%E6%95%88%E6%9E%9C%E5%AF%B9%E6%AF%94%E5%8F%8A%E5%88%86%E6%9E%90">3&#x3001;&#x65B9;&#x6848;&#x6548;&#x679C;&#x5BF9;&#x6BD4;&#x53CA;&#x5206;&#x6790;</h3>
+
+<p>&#x4ECE;&#x6211;&#x4EEC;&#x7684;&#x63A2;&#x7D22;&#x5386;&#x7A0B;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x878D;&#x5408;&#x7684;&#x65B9;&#x6848;&#x5F88;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x53E0;&#x52A0;&#xFF0C;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x76F8;&#x4E92;&#x9694;&#x79BB;&#x7684;&#x7ED8;&#x56FE;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;context&#xFF09;&#xFF0C;WebGL&#x5C42;&#x4E5F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4EA4;&#x96C6;&#xFF0C;&#x8FD9;&#x7C7B;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;&#x4E24;&#x4E2A;&#x753B;&#x5E03;&#x201D;&#x65B9;&#x6848;&#xFF1B;</li>
+<li>&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x5171;&#x7528;&#x4E00;&#x4E2A;&#x7ED8;&#x56FE;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;context&#xFF09;&#xFF0C;WebGL&#x5C42;&#x6709;&#x4EA4;&#x96C6;&#xFF0C;&#x8FD9;&#x7C7B;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;&#x4E00;&#x4E2A;&#x753B;&#x5E03;&#x201D;&#x65B9;&#x6848;&#x3002;</li>
+</ul>
+<p>&#x4E24;&#x7C7B;&#x65B9;&#x6848;&#x4E2D;&#x53C8;&#x6709;&#x5F88;&#x591A;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#xFF0C;&#x4E0B;&#x9762;&#x57FA;&#x4E8E;&#x6211;&#x4EEC;&#x73B0;&#x6709;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x901A;&#x8FC7;&#x5B9E;&#x9645;&#x4EE3;&#x7801;&#xFF0C;&#x770B;&#x770B;&#x51E0;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<h5 class="mume-header" id="31-%E5%B0%8F%E7%AA%97%E5%8F%A0%E5%8A%A0%E6%98%BE%E7%A4%BAthreejs%E5%9C%BA%E6%99%AF">3.1&#x3001;&#x5C0F;&#x7A97;&#x53E0;&#x52A0;&#x663E;&#x793A;three.js&#x573A;&#x666F;</h5>
+
+<p>&#x6B64;&#x65B9;&#x6848;&#x4EE5;<code>Cesium</code>&#x521B;&#x5EFA;&#x7684;&#x4E09;&#x7EF4;&#x5730;&#x56FE;&#x4E3A;&#x4E3B;&#xFF0C;&#x5C55;&#x793A;&#x5B8F;&#x89C2;&#x7684;&#x5730;&#x7406;&#x7A7A;&#x95F4;&#x573A;&#x666F;&#xFF0C;&#x70B9;&#x51FB;&#x5230;&#x5730;&#x56FE;&#x4E0A;&#x67D0;&#x4E2A;&#x8981;&#x7D20;&#x65F6;&#xFF0C;&#x5F39;&#x51FA;&#x5C0F;&#x7A97;&#x4F7F;&#x7528;three.js&#x5C55;&#x793A;&#x8BF8;&#x5982;&#x5BA4;&#x5185;&#x3001;&#x8BBE;&#x5907;&#x8BE6;&#x7EC6;&#x7ED3;&#x6784;&#x3001;&#x96F6;&#x90E8;&#x4EF6;&#x7B49;&#x3002;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x53EA;&#x5728;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0A;&#x6709;&#x5173;&#x8054;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x5F00;&#x53D1;&#xFF0C;&#x6700;&#x540E;&#x8FDB;&#x884C;&#x96C6;&#x6210;&#xFF0C;&#x5C5E;&#x4E8E;&#x201C;&#x4E24;&#x4E2A;&#x753B;&#x5E03;&#x201D;&#x7C7B;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x4E3B;&#x8981;&#x6D41;&#x7A0B;&#x3002;</p>
+<p>HTML&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5F15;&#x5165;<code>Cesium</code>&#x7684;js&#x548C;css&#x6587;&#x4EF6;&#xFF0C;<code>Three.js</code>&#x901A;&#x8FC7;import&#x5BFC;&#x5165;&#x3002;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>1.&#x5C0F;&#x7A97;&#x53E0;&#x52A0;&#x663E;&#x793A;three.js&#x573A;&#x666F;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">html<span class="token punctuation">,</span>body</span><span class="token punctuation">{</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector"><span class="token id">#cesiumContainer</span></span> <span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector"><span class="token id">#threeContainer</span></span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">%</span><span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token unit">%</span><span class="token punctuation">;</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token unit">%</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cesiumContainer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>threeContainer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Widgets/widgets.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Cesium.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>./index.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</pre><p>JavaScript&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x505A;&#x51E0;&#x4EF6;&#x4E8B;&#xFF1A;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x663E;&#x793A;&#x5668;</li>
+<li><code>Cesium</code>&#x573A;&#x666F;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7403;&#x4F53;&#xFF1B;</li>
+<li><code>Three.js</code>&#x573A;&#x666F;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5706;&#x73AF;&#x8282;&#xFF1B;</li>
+<li>&#x70B9;&#x51FB;<code>Cesium</code>&#x573A;&#x666F;&#x7684;&#x7403;&#x4F53;&#xFF0C;&#x5F39;&#x7A97;&#x663E;&#x793A;<code>Three.js</code>&#x573A;&#x666F;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token operator">*</span> <span class="token keyword module keyword-as">as</span> <span class="token constant">THREE</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/three&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">MeBaseViewer</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/core/Source/MeBaseViewer&quot;</span><span class="token punctuation">;</span>
+ 
+<span class="token comment">//&#x521B;&#x5EFA;three.js&#x663E;&#x793A;&#x5668;</span>
+<span class="token keyword keyword-var">var</span> viewer3js <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MeBaseViewer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    container<span class="token operator">:</span> <span class="token string">&apos;threeContainer&apos;</span><span class="token punctuation">,</span>
+    background<span class="token operator">:</span> <span class="token string">&apos;black&apos;</span><span class="token punctuation">,</span>
+    <span class="token comment">//&#x9ED8;&#x8BA4;&#x4E0D;&#x663E;&#x793A;&#xFF0C;&#x70B9;&#x51FB;&#x5230;&#x7403;&#x4F53;&#x518D;&#x663E;&#x793A;</span>
+    visible<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//&#x6539;&#x53D8;&#x76F8;&#x673A;&#x7684;&#x89C6;&#x9525;&#x4F53;&#x8FDC;&#x7AEF;&#x622A;&#x9762;&#x4E0E;&#x89C6;&#x70B9;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x907F;&#x514D;&#x5750;&#x6807;&#x8303;&#x56F4;&#x592A;&#x5927;&#x800C;&#x88AB;&#x88C1;&#x526A;&#x6389;</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token property-access">far</span> <span class="token operator">=</span> <span class="token number">1000000000</span>
+
+<span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>TorusKnotBufferGeometry</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> material <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshStandardMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">&apos;gray&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+geometry<span class="token punctuation">.</span><span class="token method function property-access">computeBoundingSphere</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> mesh <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry<span class="token punctuation">,</span> material<span class="token punctuation">)</span>
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5230;three.js&#x573A;&#x666F;</span>
+viewer3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>mesh<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x5C06;&#x76F8;&#x673A;&#x5B9A;&#x4F4D;&#x5230;3D&#x7F51;&#x683C;</span>
+viewer3js<span class="token punctuation">.</span><span class="token method function property-access">setView</span><span class="token punctuation">(</span>mesh<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    heading<span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+    pitch<span class="token operator">:</span> <span class="token number">45</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5750;&#x6807;&#x8F74;&#x8F85;&#x52A9;&#x7EBF;</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>AxesHelper</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5149;&#x6E90;</span>
+<span class="token keyword keyword-var">var</span> light <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>PointLight</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>light<span class="token punctuation">)</span>
+viewer3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">)</span>
+
+
+<span class="token comment">//&#x5730;&#x56FE;&#x9ED8;&#x8BA4;&#x89C6;&#x91CE;&#x8C03;&#x6574;&#x5230;&#x4E2D;&#x56FD;</span>
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Camera</span></span><span class="token punctuation">.</span><span class="token constant">DEFAULT_VIEW_RECTANGLE</span> <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Rectangle</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span>
+    <span class="token number">70</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">60</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x521B;&#x5EFA;cesium&#x663E;&#x793A;&#x5668;&#xFF08;&#x5730;&#x7403;&#x7EC4;&#x4EF6;&#xFF09;</span>
+<span class="token keyword keyword-var">var</span> viewer <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Viewer</span><span class="token punctuation">(</span><span class="token string">&apos;cesiumContainer&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    creditContainer<span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;div&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//Cesium&#x6DFB;&#x52A0;&#x7403;&#x4F53;</span>
+<span class="token keyword keyword-var">var</span> entity<span class="token operator">=</span>viewer<span class="token punctuation">.</span><span class="token property-access">entities</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    position<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106.643932721321</span><span class="token punctuation">,</span> <span class="token number">26.623618804165</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    ellipsoid<span class="token operator">:</span> <span class="token punctuation">{</span>
+        radii<span class="token operator">:</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Cartesian3</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+viewer<span class="token punctuation">.</span><span class="token method function property-access">flyTo</span><span class="token punctuation">(</span>entity<span class="token punctuation">)</span>
+<span class="token comment">//&#x70B9;&#x51FB;&#x7403;&#x4F53;&#x65F6;&#x663E;&#x793A;Three.js&#x573A;&#x666F;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">screenSpaceEventHandler</span><span class="token punctuation">.</span><span class="token method function property-access">setInputAction</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> picked <span class="token operator">=</span> viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">pick</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">)</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>picked <span class="token operator">&amp;&amp;</span> picked<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        viewer3js<span class="token punctuation">.</span><span class="token property-access">visible</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow keyword-else">else</span> <span class="token punctuation">{</span>
+        viewer3js<span class="token punctuation">.</span><span class="token property-access">visible</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ScreenSpaceEventType</span></span><span class="token punctuation">.</span><span class="token constant">LEFT_CLICK</span><span class="token punctuation">)</span>
+</pre><p>&#x6548;&#x679C;&#x89C6;&#x9891;&#xFF1A;</p>
+<p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="1.&#x5C0F;&#x7A97;&#x53E0;&#x52A0;&#x663E;&#x793A;three.js&#x573A;&#x666F;.jpg">
+        <source id="mp4" src="./1.&#x5C0F;&#x7A97;&#x53E0;&#x52A0;&#x663E;&#x793A;three.js&#x573A;&#x666F;.mp4" poster="1.&#x5C0F;&#x7A97;&#x53E0;&#x52A0;&#x663E;&#x793A;three.js&#x573A;&#x666F;.jpg" type="video/mp4">
+    </video>
+</p>
+<h5 class="mume-header" id="32-%E5%9C%A8threejs%E4%B8%AD%E4%BD%BF%E7%94%A8cesium">3.2&#x3001;&#x5728;Three.js&#x4E2D;&#x4F7F;&#x7528;Cesium</h5>
+
+<p>&#x5982;&#x679C;&#x53EA;&#x662F;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>Cesium</code>&#x7684;&#x90E8;&#x5206;GIS&#x529F;&#x80FD;&#xFF0C;&#x6BD4;&#x5982;&#x5750;&#x6807;&#xFF0C;&#x51E0;&#x4F55;&#x4F53;&#xFF0C;&#x592A;&#x9633;&#x4F4D;&#x7F6E;&#x53CA;&#x7167;&#x5C04;&#x65B9;&#x5411;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x53EA;&#x521B;&#x5EFA;<code>Three.js</code>&#x573A;&#x666F;&#xFF0C;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x51E0;&#x4F55;&#x4F53;&#x7684;&#x9876;&#x70B9;&#x4F4D;&#x7F6E;&#x5750;&#x6807;&#x3001;3D&#x5BF9;&#x8C61;&#x4F4D;&#x7F6E;&#x7B49;&#x7531;<code>Cesium</code>&#x8BA1;&#x7B97;&#xFF0C;&#x4F7F;&#x5F97;<code>Three.js</code>&#x7684;&#x573A;&#x666F;&#x5177;&#x5907;&#x4E86;&#x5730;&#x7406;&#x7A7A;&#x95F4;&#x8868;&#x8FBE;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6F14;&#x793A;&#x7528;<code>Three.js</code>&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x5730;&#x7403;&#xFF0C;&#x5E76;&#x52A0;&#x8F7D;&#x6D77;&#x9646;&#x6A21;&#x677F;geojson&#xFF0C;&#x51E0;&#x4F55;&#x4F53;&#x7531;<code>Cesium</code>&#x521B;&#x5EFA;&#x3002;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>2.&#x5728;three.js&#x4E2D;&#x4F7F;&#x7528;cesium<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">html<span class="token punctuation">,</span>body</span><span class="token punctuation">{</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Cesium.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>./index.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</pre><p>JavaScript&#x4EE3;&#x7801;&#x5173;&#x952E;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528;<code>Cesium</code>&#x521B;&#x5EFA;&#x57FA;&#x4E8E;WGS84&#x5750;&#x6807;&#x7684;&#x51E0;&#x4F55;&#x4F53;&#xFF1B;</li>
+<li>&#x5C06;<code>Cesium</code>&#x51E0;&#x4F55;&#x4F53;&#x8F6C;&#x4E3A;<code>Three.js</code>&#x51E0;&#x4F55;&#x4F53;&#xFF1B;</li>
+<li>&#x521B;&#x5EFA;&#x6750;&#x8D28;&#x548C;3D&#x7F51;&#x683C;&#xFF1B;</li>
+<li>3D&#x7F51;&#x683C;&#x7ED5;x&#x8F74;&#x65CB;&#x8F6C;90&#x5EA6;&#xFF0C;&#x5B8C;&#x6210;&#x4ECE;y-up&#x5230;z-up&#x53D8;&#x6362;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token operator">*</span> <span class="token keyword module keyword-as">as</span> <span class="token constant">THREE</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/three&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">GeometryUtils</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/core/Source/GeometryUtils&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">MeBaseViewer</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/core/Source/MeBaseViewer&quot;</span><span class="token punctuation">;</span>
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token constant">THREE</span> <span class="token operator">=</span> <span class="token constant">THREE</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;three.js&#x663E;&#x793A;&#x5668;</span>
+<span class="token keyword keyword-var">var</span> viewer3js <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MeBaseViewer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    container<span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">,</span>
+    stats<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    background<span class="token operator">:</span> <span class="token string">&apos;black&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//&#x6539;&#x53D8;&#x76F8;&#x673A;&#x7684;&#x89C6;&#x9525;&#x4F53;&#x8FDC;&#x7AEF;&#x622A;&#x9762;&#x4E0E;&#x89C6;&#x70B9;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x907F;&#x514D;&#x5750;&#x6807;&#x8303;&#x56F4;&#x592A;&#x5927;&#x800C;&#x88AB;&#x88C1;&#x526A;&#x6389;</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token property-access">far</span> <span class="token operator">=</span> <span class="token number">1000000000</span>
+
+<span class="token doc-comment comment">/**
+ * &#x4F7F;&#x7528;`Cesium`&#x521B;&#x5EFA;&#x57FA;&#x4E8E;WGS84&#x5750;&#x6807;&#x7684;&#x51E0;&#x4F55;&#x4F53;
+ * <span class="token keyword keyword-@param">@param</span> <span class="token class-name"><span class="token punctuation">{</span>geojson<span class="token punctuation">.</span>Polygon<span class="token punctuation">}</span></span> <span class="token parameter">polygon</span> 
+ * <span class="token keyword keyword-@returns">@returns</span> <span class="token class-name"><span class="token punctuation">{</span>Cesium<span class="token punctuation">.</span>PolygonGeometry<span class="token punctuation">}</span></span>
+ */</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">createPolygonGeometry</span><span class="token punctuation">(</span><span class="token parameter">polygon</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> positions <span class="token operator">=</span> polygon<span class="token punctuation">.</span><span class="token property-access">coordinates</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">coord</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span>coord<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> coord<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-var">var</span> holes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-let">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> polygon<span class="token punctuation">.</span><span class="token property-access">coordinates</span><span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-var">var</span> hole <span class="token operator">=</span> polygon<span class="token punctuation">.</span><span class="token property-access">coordinates</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">coord</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword control-flow keyword-return">return</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span>coord<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> coord<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        holes<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>PolygonHierarchy</span><span class="token punctuation">(</span>hole<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-var">var</span> polygonHierarchy <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>PolygonHierarchy</span><span class="token punctuation">(</span>positions<span class="token punctuation">,</span> holes<span class="token punctuation">)</span>
+    <span class="token keyword keyword-var">var</span> geom <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>PolygonGeometry</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        polygonHierarchy<span class="token operator">:</span> polygonHierarchy<span class="token punctuation">,</span>
+        granularity<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">toRadians</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    geom <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">PolygonGeometry</span></span><span class="token punctuation">.</span><span class="token method function property-access">createGeometry</span><span class="token punctuation">(</span>geom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> geom<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//&#x52A0;&#x8F7D;&#x6D77;&#x9646;&#x6A21;&#x677F;</span>
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Resource</span></span><span class="token punctuation">.</span><span class="token method function property-access">fetchJson</span><span class="token punctuation">(</span><span class="token string">&apos;./sealand.geojson&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">json</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> root <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Object3D</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    json<span class="token punctuation">.</span><span class="token property-access">features</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">feature</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">//&#x4F7F;&#x7528;`Cesium`&#x521B;&#x5EFA;&#x57FA;&#x4E8E;WGS84&#x5750;&#x6807;&#x7684;&#x51E0;&#x4F55;&#x4F53;</span>
+        <span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token function">createPolygonGeometry</span><span class="token punctuation">(</span>feature<span class="token punctuation">.</span><span class="token property-access">geometry</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//&#x5C06;`Cesium`&#x51E0;&#x4F55;&#x4F53;&#x8F6C;&#x4E3A;three.js&#x51E0;&#x4F55;&#x4F53;</span>
+        <span class="token keyword keyword-var">var</span> geometry3js <span class="token operator">=</span> <span class="token maybe-class-name">GeometryUtils</span><span class="token punctuation">.</span><span class="token method function property-access">toBufferGeometry3js</span><span class="token punctuation">(</span>geometry<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//&#x521B;&#x5EFA;&#x6750;&#x8D28;&#x548C;3D&#x7F51;&#x683C;</span>
+        <span class="token keyword keyword-var">var</span> material <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshBasicMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            color<span class="token operator">:</span> <span class="token string">&apos;gray&apos;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-var">var</span> mesh <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry3js<span class="token punctuation">,</span> material<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//&#x7ED5;x&#x8F74;&#x65CB;&#x8F6C;90&#x5EA6;&#xFF0C;&#x4ECE;y-up&#x5230;z-up</span>
+        mesh<span class="token punctuation">.</span><span class="token property-access">rotation</span><span class="token punctuation">.</span><span class="token property-access">x</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        root<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>mesh<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">//&#x6DFB;&#x52A0;&#x5230;three.js&#x573A;&#x666F;</span>
+    viewer3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+ 
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//&#x4F7F;&#x7528;Cesium&#x521B;&#x5EFA;&#x57FA;&#x4E8E;WGS84&#x5750;&#x6807;&#x7684;&#x51E0;&#x4F55;&#x4F53;</span>
+<span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>EllipsoidGeometry</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    radii<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Ellipsoid</span></span><span class="token punctuation">.</span><span class="token constant">WGS84</span><span class="token punctuation">.</span><span class="token property-access">radii</span><span class="token punctuation">,</span>
+    stackPartitions<span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+    slicePartitions<span class="token operator">:</span> <span class="token number">64</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+geometry <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">EllipsoidGeometry</span></span><span class="token punctuation">.</span><span class="token method function property-access">createGeometry</span><span class="token punctuation">(</span>geometry<span class="token punctuation">)</span>
+<span class="token comment">//&#x5C06;Cesium&#x51E0;&#x4F55;&#x4F53;&#x8F6C;&#x4E3A;three.js&#x51E0;&#x4F55;&#x4F53;</span>
+geometry <span class="token operator">=</span> <span class="token maybe-class-name">GeometryUtils</span><span class="token punctuation">.</span><span class="token method function property-access">toBufferGeometry3js</span><span class="token punctuation">(</span>geometry<span class="token punctuation">)</span>
+<span class="token comment">//&#x521B;&#x5EFA;&#x6750;&#x8D28;&#x548C;3D&#x7F51;&#x683C;</span>
+<span class="token keyword keyword-var">var</span> mesh <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry<span class="token punctuation">,</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshBasicMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    wireframe<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">&apos;gray&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x7ED5;x&#x8F74;&#x65CB;&#x8F6C;90&#x5EA6;&#xFF0C;&#x4ECE;y-up&#x5230;z-up</span>
+mesh<span class="token punctuation">.</span><span class="token property-access">rotation</span><span class="token punctuation">.</span><span class="token property-access">x</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">/</span> <span class="token number">2</span>
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5230;three.js&#x573A;&#x666F;</span>
+viewer3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>mesh<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x5C06;&#x89C6;&#x91CE;&#x8C03;&#x6574;&#x5230;&#x4E2D;&#x56FD;</span>
+viewer3js<span class="token punctuation">.</span><span class="token method function property-access">setView</span><span class="token punctuation">(</span>mesh<span class="token punctuation">,</span>  <span class="token punctuation">{</span>
+    heading<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    pitch<span class="token operator">:</span> <span class="token number">105</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5750;&#x6807;&#x8F74;&#x8F85;&#x52A9;&#x7EBF;</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>AxesHelper</span><span class="token punctuation">(</span><span class="token number">10000000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</pre><p>&#x6548;&#x679C;&#x89C6;&#x9891;&#xFF1A;</p>
+<p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="2.&#x5728;three.js&#x4E2D;&#x4F7F;&#x7528;cesium.jpg">
+        <source id="mp4" src="./2.&#x5728;three.js&#x4E2D;&#x4F7F;&#x7528;cesium.mp4" poster="2.&#x5728;three.js&#x4E2D;&#x4F7F;&#x7528;cesium.jpg" type="video/mp4">
+    </video>
+</p>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x4EE5;<code>Three.js</code>&#x4E3A;&#x4E3B;&#xFF0C;&#x5C5E;&#x4E8E;&#x201C;&#x4E00;&#x4E2A;&#x753B;&#x5E03;&#x201D;&#x7C7B;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x57FA;&#x4E8E;<code>Three.js</code>&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4E09;&#x7EF4;&#x5730;&#x56FE;&#x5E94;&#x7528;&#x4E86;&#xFF0C;<code>Cesium</code>&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x4E2D;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x91CD;&#x8981;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x7528;&#x5176;&#x4ED6;&#x8BA1;&#x7B97;&#x5E93;&#x66FF;&#x4EE3;&#xFF0C;&#x8FDB;&#x800C;&#x5B8C;&#x5168;&#x4ECE;&#x5934;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;<code>Three.js</code>&#x7684;&#x4E09;&#x7EF4;&#x5730;&#x56FE;&#x6846;&#x67B6;&#xFF0C;<code>iTowns</code>&#xFF08; <a href="https://github.com/iTowns/itowns">https://github.com/iTowns/itowns</a> &#xFF09;&#x5C31;&#x662F;&#x8FD9;&#x4E48;&#x505A;&#x7684;&#x3002;</p>
+<h5 class="mume-header" id="33-%E5%B0%86threejs%E5%9C%BA%E6%99%AF%E5%BD%93%E4%BD%9C%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD">3.3&#x3001;&#x5C06;<code>Three.js</code>&#x573A;&#x666F;&#x5F53;&#x4F5C;&#x6A21;&#x578B;&#x52A0;&#x8F7D;</h5>
+
+<p>&#x7528;<code>Three.js</code>&#x7EC4;&#x7EC7;&#x573A;&#x666F;&#xFF0C;&#x5B8C;&#x6210;3D&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#xFF0C;gltf&#x4E4B;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x683C;&#x5F0F;&#x6A21;&#x578B;&#x89E3;&#x6790;&#xFF0C;&#x7136;&#x540E;&#x6574;&#x4F53;&#x5BFC;&#x51FA;&#x4E3A;gltf&#xFF0C;&#x6700;&#x540E;&#x4F7F;&#x7528;Cesium.Model&#x5C55;&#x793A;&#x6A21;&#x578B;&#xFF0C;&#x5C5E;&#x4E8E;&#x201C;&#x4E00;&#x4E2A;&#x753B;&#x5E03;&#x201D;&#x7C7B;&#x3002;</p>
+<p>HTML&#x4EE3;&#x7801;&#x4E5F;&#x53EA;&#x662F;&#x5F15;&#x7528;js&#x3001;css&#x6587;&#x4EF6;&#xFF0C;&#x573A;&#x666F;&#x5BB9;&#x5668;&#x76F4;&#x63A5;&#x7528;body&#x3002;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>3.&#x5C06;three.js&#x573A;&#x666F;&#x5F53;&#x4F5C;&#x6A21;&#x578B;&#x52A0;&#x8F7D;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">html<span class="token punctuation">,</span>body</span><span class="token punctuation">{</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Widgets/widgets.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Cesium.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>./index.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</pre><p>JavaScript&#x4EE3;&#x7801;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E3A;&#x4E86;&#x548C;&#x5176;&#x4ED6;&#x65B9;&#x6848;&#x5BF9;&#x6BD4;&#xFF0C;&#x6211;&#x4EEC;&#x7981;&#x7528;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x5141;&#x8BB8;<code>Cesium</code>&#x76F8;&#x673A;&#x7A7F;&#x900F;&#x7269;&#x4F53;&#x548C;&#x8FDB;&#x5165;&#x5730;&#x4E0B;&#xFF0C;&#x5F00;&#x542F;&#x5730;&#x5F62;&#x6DF1;&#x5EA6;&#x6D4B;&#x8BD5;&#xFF0C;&#x770B;&#x770B;&#x5730;&#x5F62;&#x662F;&#x4E0D;&#x662F;&#x6B63;&#x5E38;&#x7684;&#x906E;&#x6321;<code>Three.js</code>&#x5BFC;&#x51FA;&#x7684;gltf&#x6A21;&#x578B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token operator">*</span> <span class="token keyword module keyword-as">as</span> <span class="token constant">THREE</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/three&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">GLTFExporter</span> <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&apos;@mesh-3d/three/examples/jsm/exporters/GLTFExporter&apos;</span>
+
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Camera</span></span><span class="token punctuation">.</span><span class="token constant">DEFAULT_VIEW_RECTANGLE</span> <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Rectangle</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span>
+    <span class="token number">70</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">60</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x521B;&#x5EFA;`Cesium`&#x663E;&#x793A;&#x5668;&#xFF08;&#x5730;&#x7403;&#x7EC4;&#x4EF6;&#xFF09;</span>
+<span class="token keyword keyword-var">var</span> viewer <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Viewer</span><span class="token punctuation">(</span><span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    creditContainer<span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;div&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x7981;&#x7528;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x5141;&#x8BB8;`Cesium`&#x76F8;&#x673A;&#x7A7F;&#x900F;&#x7269;&#x4F53;&#x548C;&#x8FDB;&#x5165;&#x5730;&#x4E0B;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">screenSpaceCameraController</span><span class="token punctuation">.</span><span class="token property-access">enableCollisionDetection</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token comment">//&#x5F00;&#x542F;&#x5730;&#x5F62;&#x6DF1;&#x5EA6;&#x6D4B;&#x8BD5;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">globe</span><span class="token punctuation">.</span><span class="token property-access">depthTestAgainstTerrain</span><span class="token operator">=</span><span class="token boolean">true</span>
+
+<span class="token comment">//&#x642D;&#x5EFA;three.js&#x573A;&#x666F;</span>
+
+<span class="token keyword keyword-var">var</span> scene <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Scene</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>TorusKnotBufferGeometry</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> material <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshStandardMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">&apos;gray&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+geometry<span class="token punctuation">.</span><span class="token method function property-access">computeBoundingSphere</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> box <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry<span class="token punctuation">,</span> material<span class="token punctuation">)</span>
+box<span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">.</span><span class="token method function property-access">set</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> geometry<span class="token punctuation">.</span><span class="token property-access">boundingSphere</span><span class="token punctuation">.</span><span class="token property-access">radius</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+scene<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>box<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x5C06;three.js&#x573A;&#x666F;&#x5BFC;&#x51FA;&#x4E3A;gltf</span>
+<span class="token keyword keyword-var">var</span> exporter <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">GLTFExporter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+exporter<span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span>scene<span class="token punctuation">,</span> <span class="token parameter">gltf</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//&#x52A0;&#x8F7D;&#x5BFC;&#x51FA;&#x7684;gltf&#x6A21;&#x578B;</span>
+
+    <span class="token comment">//&#x521B;&#x5EFA;&#x6A21;&#x578B;&#x53D8;&#x6362;&#x77E9;&#x9635;&#xFF0C;&#x8BBE;&#x7F6E;&#x6A21;&#x578B;&#x5728;&#x5730;&#x7403;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3001;&#x65CB;&#x8F6C;&#x3001;&#x7F29;&#x653E;&#x7B49;&#x53C2;&#x6570;</span>
+    <span class="token keyword keyword-var">var</span> origin <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106.643932721321</span><span class="token punctuation">,</span> <span class="token number">26.623618804165</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> modelMatrix <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Transforms</span></span><span class="token punctuation">.</span><span class="token method function property-access">eastNorthUpToFixedFrame</span><span class="token punctuation">(</span>origin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-var">var</span> model <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Model</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        gltf<span class="token operator">:</span> gltf<span class="token punctuation">,</span>
+        modelMatrix<span class="token operator">:</span> modelMatrix
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">primitives</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C06;&#x76F8;&#x673A;&#x5B9A;&#x4F4D;&#x5230;&#x8BE5;&#x6A21;&#x578B;</span>
+    model<span class="token punctuation">.</span><span class="token property-access">readyPromise</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">model</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-var">var</span> boundingSphere <span class="token operator">=</span> model<span class="token punctuation">.</span><span class="token property-access">boundingSphere</span><span class="token punctuation">.</span><span class="token method function property-access">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Matrix4</span></span><span class="token punctuation">.</span><span class="token method function property-access">multiplyByPoint</span><span class="token punctuation">(</span>model<span class="token punctuation">.</span><span class="token property-access">modelMatrix</span><span class="token punctuation">,</span> boundingSphere<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">,</span> boundingSphere<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        viewer<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token method function property-access">flyToBoundingSphere</span><span class="token punctuation">(</span>boundingSphere<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="3.&#x5C06;three.js&#x573A;&#x666F;&#x5F53;&#x4F5C;&#x6A21;&#x578B;&#x52A0;&#x8F7D;.jpg">
+        <source id="mp4" src="./3.&#x5C06;three.js&#x573A;&#x666F;&#x5F53;&#x4F5C;&#x6A21;&#x578B;&#x52A0;&#x8F7D;.mp4" poster="3.&#x5C06;three.js&#x573A;&#x666F;&#x5F53;&#x4F5C;&#x6A21;&#x578B;&#x52A0;&#x8F7D;.jpg" type="video/mp4">
+    </video>
+</p>
+<p>&#x5176;&#x5B9E;&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#xFF0C;&#x5BFC;&#x51FA;&#x7684;gltf&#x548C;&#x666E;&#x901A;&#x7684;&#x6A21;&#x578B;&#x4E00;&#x6837;&#xFF0C;&#x906E;&#x6321;&#x5173;&#x7CFB;&#x5FC5;&#x7136;&#x65F6;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x9650;&#x5236;&#x5F88;&#x591A;&#xFF0C;<code>Three.js</code>&#x5728;&#x8FD9;&#x91CC;&#x76F8;&#x5F53;&#x4E8E;&#x6A21;&#x578B;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5DE5;&#x5177;&#x3002;</p>
+<h5 class="mume-header" id="34-threejs%E5%92%8Ccesium%E7%9B%B8%E6%9C%BA%E5%90%8C%E6%AD%A5">3.4&#x3001;<code>Three.js</code>&#x548C;<code>Cesium</code>&#x76F8;&#x673A;&#x540C;&#x6B65;</h5>
+
+<p>&#x8FD9;&#x662F;<code>Cesium</code>&#x5B98;&#x65B9;&#x535A;&#x5BA2;&#x6587;&#x7AE0;&#x4ECB;&#x7ECD;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x5C5E;&#x4E8E;&#x201C;&#x4E24;&#x4E2A;&#x753B;&#x5E03;&#x201D;&#x7C7B;&#xFF0C;<code>Cesium</code>&#x521B;&#x5EFA;&#x7684;&#x5730;&#x7403;&#x4F5C;&#x4E3A;&#x5E95;&#x56FE;&#xFF0C;&#x4EE5;&#x5730;&#x56FE;&#x4E0A;&#x4E00;&#x4E2A;&#x70B9;&#x539F;&#x70B9;&#x5EFA;&#x7ACB;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#xFF0C;<code>Three.js</code>&#x573A;&#x666F;&#x57FA;&#x4E8E;&#x6B64;&#x5750;&#x6807;&#x7CFB;&#x53E0;&#x52A0;&#x5230;<code>Cesium</code>&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x5728;<code>Cesium</code>&#x5E27;&#x6E32;&#x67D3;&#x524D;&#x540C;&#x6B65;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x7684;&#x76F8;&#x673A;&#xFF0C;&#x4E4B;&#x540E;<code>Three.js</code>&#x573A;&#x666F;&#x642D;&#x5EFA;&#x5C31;&#x548C;&#x4E00;&#x822C;&#x7684;<code>Three.js</code>&#x5E94;&#x7528;&#x642D;&#x5EFA;&#x4E00;&#x6837;&#x4E86;&#x3002;</p>
+<p>HTML&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x5F15;&#x5165;<code>Cesium</code>&#x7684;js&#x3001;css&#x6587;&#x4EF6;&#x3002;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>4.three.js&#x548C;cesium&#x76F8;&#x673A;&#x540C;&#x6B65;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">html<span class="token punctuation">,</span>body</span><span class="token punctuation">{</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector"><span class="token id">#cesiumContainer</span><span class="token punctuation">,</span>
+        <span class="token id">#threeContainer</span></span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector"><span class="token id">#threeContainer</span></span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token unit">%</span><span class="token punctuation">;</span>
+            <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cesiumContainer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>threeContainer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Widgets/widgets.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Cesium.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>./index.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</pre><p>JavaScript&#x4EE3;&#x7801;&#x5173;&#x952E;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x6A21;&#x578B;&#x53D8;&#x6362;&#x77E9;&#x9635;&#xFF0C;&#x8BBE;&#x7F6E;&#x6574;&#x4E2A;<code>Three.js</code>&#x573A;&#x666F;&#x5728;&#x5730;&#x7403;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3001;&#x65CB;&#x8F6C;&#x3001;&#x7F29;&#x653E;&#x7B49;&#x53C2;&#x6570;&#xFF1B;</li>
+<li>&#x4F7F;&#x7528;&#x6A21;&#x578B;&#x53D8;&#x6362;&#x77E9;&#x9635;&#x6784;&#x5EFA;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#xFF1B;</li>
+<li>&#x76D1;&#x542C;<code>Cesium</code>&#x573A;&#x666F;preRender&#x4E8B;&#x4EF6;&#xFF0C;&#x5C06;<code>Cesium</code>&#x76F8;&#x673A;&#x8F6C;&#x4E3A;<code>Three.js</code>&#x76F8;&#x673A;&#xFF0C;&#x5E76;&#x6E32;&#x67D3;<code>Three.js</code>&#x573A;&#x666F;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token operator">*</span> <span class="token keyword module keyword-as">as</span> <span class="token constant">THREE</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/three&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">MeBaseViewer</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/core/Source/MeBaseViewer&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">CameraUtils</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/core/Source/CameraUtils&quot;</span><span class="token punctuation">;</span>
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token constant">THREE</span> <span class="token operator">=</span> <span class="token constant">THREE</span>
+
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Camera</span></span><span class="token punctuation">.</span><span class="token constant">DEFAULT_VIEW_RECTANGLE</span> <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Rectangle</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span>
+    <span class="token number">70</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">60</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;`Cesium`&#x663E;&#x793A;&#x5668;&#xFF08;&#x5730;&#x7403;&#x7EC4;&#x4EF6;&#xFF09;</span>
+<span class="token keyword keyword-var">var</span> viewer <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Viewer</span><span class="token punctuation">(</span><span class="token string">&apos;cesiumContainer&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    creditContainer<span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;div&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x7981;&#x7528;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x5141;&#x8BB8;`Cesium`&#x76F8;&#x673A;&#x7A7F;&#x900F;&#x7269;&#x4F53;&#x548C;&#x8FDB;&#x5165;&#x5730;&#x4E0B;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">screenSpaceCameraController</span><span class="token punctuation">.</span><span class="token property-access">enableCollisionDetection</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token comment">//&#x5F00;&#x542F;&#x5730;&#x5F62;&#x6DF1;&#x5EA6;&#x6D4B;&#x8BD5;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">globe</span><span class="token punctuation">.</span><span class="token property-access">depthTestAgainstTerrain</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;three.js&#x663E;&#x793A;&#x5668;</span>
+<span class="token keyword keyword-var">var</span> viewer3js <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MeBaseViewer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    container<span class="token operator">:</span> <span class="token string">&apos;threeContainer&apos;</span><span class="token punctuation">,</span>
+    autoRender<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//&#x642D;&#x5EFA;three.js&#x573A;&#x666F;</span>
+
+<span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>TorusKnotBufferGeometry</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> material <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshStandardMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">&apos;gray&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+geometry<span class="token punctuation">.</span><span class="token method function property-access">computeBoundingSphere</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> mesh <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry<span class="token punctuation">,</span> material<span class="token punctuation">)</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>mesh<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5750;&#x6807;&#x8F74;&#x8F85;&#x52A9;&#x7EBF;</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>AxesHelper</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5149;&#x6E90;</span>
+<span class="token keyword keyword-var">var</span> light <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>PointLight</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>light<span class="token punctuation">)</span>
+viewer3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">)</span>
+
+<span class="token comment">//&#x540C;&#x6B65;&#x76F8;&#x673A;</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;&#x6A21;&#x578B;&#x53D8;&#x6362;&#x77E9;&#x9635;&#xFF0C;&#x8BBE;&#x7F6E;&#x6574;&#x4E2A;three.js&#x573A;&#x666F;&#x5728;&#x5730;&#x7403;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3001;&#x65CB;&#x8F6C;&#x3001;&#x7F29;&#x653E;&#x7B49;&#x53C2;&#x6570;&#x3002;</span>
+<span class="token keyword keyword-var">var</span> origin <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106.643932721321</span><span class="token punctuation">,</span> <span class="token number">26.623618804165</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x8FD9;&#x91CC;&#x4E0D;&#x7528;eastNorthUpToFixedFrame&#x662F;&#x56E0;&#x4E3A;three.js&#x573A;&#x666F;&#x9ED8;&#x8BA4;y&#x8F74;&#x671D;&#x4E0A;</span>
+<span class="token keyword keyword-var">var</span> modelMatrix <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Transforms</span></span><span class="token punctuation">.</span><span class="token method function property-access">northUpEastToFixedFrame</span><span class="token punctuation">(</span>origin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x4F7F;&#x7528;&#x6A21;&#x578B;&#x53D8;&#x6362;&#x77E9;&#x9635;&#x6784;&#x5EFA;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;</span>
+<span class="token keyword keyword-var">var</span> referenceFrame <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token doc-comment comment">/**
+     * &#x4ECE;three.js&#x76F8;&#x673A;&#x5230;`Cesium`&#x76F8;&#x673A;&#x8F6C;&#x6362;&#x65F6;&#x4F7F;&#x7528;
+     */</span>
+    matrix<span class="token operator">:</span> modelMatrix<span class="token punctuation">,</span>
+    <span class="token doc-comment comment">/**
+     * &#x4ECE;`Cesium`&#x76F8;&#x673A;&#x5230;three.js&#x76F8;&#x673A;&#x8F6C;&#x6362;&#x65F6;&#x4F7F;&#x7528;&#x3002;
+     * &#x5982;&#x679C;modelMatrix&#x4E0D;&#x53D8;&#xFF0C;&#x5219;&#x9006;&#x77E9;&#x9635;&#x53EF;&#x4EE5;&#x4E0D;&#x7ED9;&#x5B9A;&#xFF1B;modelMatrix&#x53D8;&#x5316;&#x65F6;&#x9700;&#x8981;&#x540C;&#x65F6;&#x66F4;&#x65B0;&#x9006;&#x77E9;&#x9635;
+     */</span>
+    inverseMatrix<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Matrix4</span></span><span class="token punctuation">.</span><span class="token method function property-access">inverse</span><span class="token punctuation">(</span>modelMatrix<span class="token punctuation">,</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Matrix4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">preRender</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x540C;&#x6B65;&#x76F8;&#x673A;&#xFF1A;&#x5C06;`Cesium`&#x76F8;&#x673A;&#x8F6C;&#x4E3A;three.js&#x76F8;&#x673A;</span>
+    <span class="token maybe-class-name">CameraUtils</span><span class="token punctuation">.</span><span class="token method function property-access">toPerspectiveCamera3js</span><span class="token punctuation">(</span>viewer<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">,</span> viewer3js<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">,</span> referenceFrame<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//&#x6267;&#x884C;three.js&#x573A;&#x666F;&#x6E32;&#x67D3;</span>
+    viewer3js<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//&#x5C06;`Cesium`&#x76F8;&#x673A;&#x5B9A;&#x4F4D;&#x5230;three.js&#x573A;&#x666F;</span>
+<span class="token keyword keyword-var">var</span> boundingSphere <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">BoundingSphere</span></span><span class="token punctuation">.</span><span class="token method function property-access">clone</span><span class="token punctuation">(</span>geometry<span class="token punctuation">.</span><span class="token property-access">boundingSphere</span><span class="token punctuation">)</span>
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Matrix4</span></span><span class="token punctuation">.</span><span class="token method function property-access">multiplyByPoint</span><span class="token punctuation">(</span>modelMatrix<span class="token punctuation">,</span> boundingSphere<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">,</span> boundingSphere<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token method function property-access">flyToBoundingSphere</span><span class="token punctuation">(</span>boundingSphere<span class="token punctuation">)</span>
+</pre><p>&#x6548;&#x679C;&#x89C6;&#x9891;&#xFF1A;</p>
+<p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="4.three.js&#x548C;cesium&#x76F8;&#x673A;&#x540C;&#x6B65;.jpg">
+        <source id="mp4" src="./4.three.js&#x548C;cesium&#x76F8;&#x673A;&#x540C;&#x6B65;.mp4" poster="4.three.js&#x548C;cesium&#x76F8;&#x673A;&#x540C;&#x6B65;.jpg" type="video/mp4">
+    </video>
+</p>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x548C;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6848;&#x5F88;&#x50CF;&#xFF0C;&#x552F;&#x4E00;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#x662F;&#x5426;&#x76F8;&#x673A;&#x540C;&#x6B65;&#x3002;</p>
+<p>&#x6700;&#x5927;&#x4F18;&#x70B9;&#x662F;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x4F7F;&#x7528;&#x6240;&#x6709;<code>Three.js</code>&#x7684;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#x770B;&#x4E0A;&#x53BB;&#x5F88;&#x6709;&#x878D;&#x5408;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x4E5F;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x66F4;&#x597D;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6848;&#xFF0C;&#x6240;&#x4EE5;&#x76EE;&#x524D;&#x5728;&#x7F51;&#x4E0A;&#x6D41;&#x4F20;&#x751A;&#x5E7F;&#x3002;</p>
+<p>&#x7F3A;&#x70B9;&#x4E3B;&#x8981;&#x662F;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x7ED8;&#x56FE;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;context&#xFF09;&#x5B8C;&#x5168;&#x5206;&#x79BB;&#x7684;&#xFF0C;&#x906E;&#x6321;&#x5173;&#x7CFB;&#x3001;&#x5149;&#x7167;&#x3001;&#x9634;&#x5F71;&#x3001;&#x540E;&#x671F;&#x7279;&#x6548;&#x3001;&#x4EA4;&#x4E92;&#x7B49;&#x7B49;&#x90FD;&#x662F;&#x4E24;&#x5957;&#x4E1C;&#x897F;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x7684;&#x878D;&#x5408;&#x3002;</p>
+<h5 class="mume-header" id="35-cesium%E5%92%8Cthreejs%E6%B7%B1%E5%BA%A6%E8%9E%8D%E5%90%88">3.5&#x3001;Cesium&#x548C;Three.js&#x6DF1;&#x5EA6;&#x878D;&#x5408;</h5>
+
+<p><code>Cesium</code>&#x548C;<code>Three.js</code>&#x90FD;&#x662F;&#x7ECF;&#x8FC7;10&#x5E74;&#x6253;&#x78E8;&#x7684;&#x5F15;&#x64CE;&#xFF0C;&#x6E32;&#x67D3;&#x5668;&#x8FD9;&#x5C42;&#x5DF2;&#x7ECF;&#x76F8;&#x5BF9;&#x7A33;&#x5B9A;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x4FBF;&#x662F;&#x4ECE;&#x6E32;&#x67D3;&#x5668;&#x5C42;&#x7740;&#x624B;&#xFF0C;&#x5176;&#x57FA;&#x672C;&#x539F;&#x7406;&#x662F;&#xFF0C;&#x7528;<code>Cesium</code>&#x7684;DrawCommand&#x6765;&#x63A5;&#x66FF;<code>Three.js</code>&#x6E32;&#x67D3;&#x5668;&#x7684;&#x90E8;&#x5206;&#x5DE5;&#x4F5C;&#xFF1B;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;Cesium.DrawCommand&#x7684;<code>Three.js</code>&#x6E32;&#x67D3;&#x5668;&#xFF0C;&#x8BA9;<code>Three.js</code>&#x771F;&#x6B63;&#x878D;&#x5165;<code>Cesium</code>&#x7684;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x548C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x548C;<code>Cesium</code>&#x7684;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x4E00;&#x8D77;&#x8FDB;&#x5165;GPU&#x5B8C;&#x6210;&#x7ED8;&#x5236;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>IE=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>5.cesium&#x548C;three.js&#x6DF1;&#x5EA6;&#x878D;&#x5408;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">html<span class="token punctuation">,</span>body</span><span class="token punctuation">{</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`/Widgets/widgets.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>../node_modules/@mesh-3d/cesium/Build/`Cesium`Unminified/Cesium.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>./index.js<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</pre><p>JavaScript&#x4E3B;&#x8981;&#x505A;&#x51E0;&#x4EF6;&#x4E8B;&#xFF1A;</p>
+<ul>
+<li>&#x521B;&#x5EFA;<code>Cesium</code>&#x573A;&#x666F;&#xFF0C;&#x5F00;&#x542F;&#x9634;&#x5F71;&#x548C;&#x5730;&#x5F62;&#x6DF1;&#x5EA6;&#x6D4B;&#x8BD5;&#xFF0C;&#x7981;&#x7528;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF1B;</li>
+<li>&#x4F7F;&#x7528;Cesium.Entity&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x5B9E;&#x4F53;&#xFF0C;&#x989C;&#x8272;&#x4E3A;&#x5929;&#x84DD;&#x8272;&#xFF0C;&#x5F00;&#x542F;&#x9634;&#x5F71;&#xFF1B;</li>
+<li>&#x642D;&#x5EFA;<code>Three.js</code>&#x573A;&#x666F;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5706;&#x73AF;&#x8282;&#xFF0C;&#x989C;&#x8272;&#x4E3A;&#x7070;&#x8272;&#xFF0C;&#x5F00;&#x542F;&#x9634;&#x5F71;&#xFF1B;</li>
+<li>&#x521B;&#x5EFA;&#x57FA;&#x4E8E;<code>Cesium</code>&#x7684;<code>Three.js</code>&#x663E;&#x793A;&#x5668;&#xFF0C;&#x52A0;&#x5165;<code>Cesium</code>&#x573A;&#x666F;&#x7684;primitives&#xFF1B;</li>
+<li>&#x8BBE;&#x7F6E;<code>Three.js</code>&#x663E;&#x793A;&#x5668;&#xFF0C;&#x4F7F;&#x7528;<code>Cesium</code>&#x592A;&#x9633;&#x5149;&#x4F5C;&#x4E3A;<code>Three.js</code>&#x573A;&#x666F;&#x5149;&#x6E90;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token operator">*</span> <span class="token keyword module keyword-as">as</span> <span class="token constant">THREE</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/three&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">MeshVisualizer</span> <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;@mesh-3d/core&quot;</span><span class="token punctuation">;</span>
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token constant">THREE</span> <span class="token operator">=</span> <span class="token constant">THREE</span>
+
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Camera</span></span><span class="token punctuation">.</span><span class="token constant">DEFAULT_VIEW_RECTANGLE</span> <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Rectangle</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span>
+    <span class="token number">70</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">60</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;`Cesium`&#x663E;&#x793A;&#x5668;&#xFF08;&#x5730;&#x7403;&#x7EC4;&#x4EF6;&#xFF09;</span>
+<span class="token keyword keyword-var">var</span> viewer <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Viewer</span><span class="token punctuation">(</span><span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    creditContainer<span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">&apos;div&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x7981;&#x7528;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x5141;&#x8BB8;`Cesium`&#x76F8;&#x673A;&#x7A7F;&#x900F;&#x7269;&#x4F53;&#x548C;&#x8FDB;&#x5165;&#x5730;&#x4E0B;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">screenSpaceCameraController</span><span class="token punctuation">.</span><span class="token property-access">enableCollisionDetection</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token comment">//&#x5F00;&#x542F;&#x5730;&#x5F62;&#x6DF1;&#x5EA6;&#x6D4B;&#x8BD5;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">globe</span><span class="token punctuation">.</span><span class="token property-access">depthTestAgainstTerrain</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token comment">//&#x7528;Cesium.Entity&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x7403;&#x4F53;&#xFF0C;&#x5E76;&#x63A5;&#x6536;/&#x6295;&#x5C04;&#x9634;&#x5F71;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">entities</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    position<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106.643932</span><span class="token punctuation">,</span> <span class="token number">26.6238</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    ellipsoid<span class="token operator">:</span> <span class="token punctuation">{</span>
+        radii<span class="token operator">:</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Cartesian3</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        shadows<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ShadowMode</span></span><span class="token punctuation">.</span><span class="token constant">ENABLED</span><span class="token punctuation">,</span>
+        material<span class="token operator">:</span><span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Color</span></span><span class="token punctuation">.</span><span class="token constant">SKYBLUE</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//&#x7528;Cesium.Entity&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x7ACB;&#x65B9;&#x4F53;&#xFF0C;&#x5E76;&#x63A5;&#x6536;/&#x6295;&#x5C04;&#x9634;&#x5F71;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">entities</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    position<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106.64445</span><span class="token punctuation">,</span> <span class="token number">26.6232</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    box<span class="token operator">:</span> <span class="token punctuation">{</span>
+        dimensions<span class="token operator">:</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Cartesian3</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        shadows<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ShadowMode</span></span><span class="token punctuation">.</span><span class="token constant">ENABLED</span><span class="token punctuation">,</span>
+        material<span class="token operator">:</span><span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Color</span></span><span class="token punctuation">.</span><span class="token constant">SKYBLUE</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//&#x642D;&#x5EFA;three.js&#x573A;&#x666F;</span>
+<span class="token keyword keyword-var">var</span> scene3js <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Scene</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>TorusKnotBufferGeometry</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> material <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshStandardMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token string">&apos;gray&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+geometry<span class="token punctuation">.</span><span class="token method function property-access">computeBoundingSphere</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> mesh <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry<span class="token punctuation">,</span> material<span class="token punctuation">)</span>
+scene3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>mesh<span class="token punctuation">)</span>
+<span class="token comment">//&#x63A5;&#x6536;/&#x6295;&#x5C04;&#x9634;&#x5F71;</span>
+mesh<span class="token punctuation">.</span><span class="token property-access">castShadow</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+mesh<span class="token punctuation">.</span><span class="token property-access">receiveShadow</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;&#x5750;&#x6807;&#x8F74;&#x8F85;&#x52A9;&#x7EBF;</span>
+scene3js<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>AxesHelper</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;&#x57FA;&#x4E8E;cesium&#x7684;three.js&#x663E;&#x793A;&#x5668;</span>
+
+<span class="token comment">//&#x521B;&#x5EFA;&#x6A21;&#x578B;&#x53D8;&#x6362;&#x77E9;&#x9635;&#xFF0C;&#x8BBE;&#x7F6E;&#x6574;&#x4E2A;three.js&#x573A;&#x666F;&#x5728;&#x5730;&#x7403;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x3001;&#x65CB;&#x8F6C;&#x3001;&#x7F29;&#x653E;&#x7B49;&#x53C2;&#x6570;&#x3002;</span>
+<span class="token keyword keyword-var">var</span> origin <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106.643932721321</span><span class="token punctuation">,</span> <span class="token number">26.623618804165</span><span class="token punctuation">,</span> geometry<span class="token punctuation">.</span><span class="token property-access">boundingSphere</span><span class="token punctuation">.</span><span class="token property-access">radius</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> modelMatrix <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Transforms</span></span><span class="token punctuation">.</span><span class="token method function property-access">eastNorthUpToFixedFrame</span><span class="token punctuation">(</span>origin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> visualizer <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MeshVisualizer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    modelMatrix<span class="token operator">:</span> modelMatrix
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//&#x5C06;three.js&#x663E;&#x793A;&#x5668;&#x52A0;&#x5165;cesium&#x573A;&#x666F;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">primitives</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>visualizer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//cesium&#x592A;&#x9633;&#x5149;&#x4F5C;&#x4E3A;&#x5C40;&#x90E8;&#x573A;&#x666F;&#x7684;&#x5149;&#x6E90;</span>
+visualizer<span class="token punctuation">.</span><span class="token property-access">useSunLight</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">shadowMap</span><span class="token punctuation">.</span><span class="token property-access">enabled</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">shadowMap</span><span class="token punctuation">.</span><span class="token property-access">maximumDistance</span> <span class="token operator">=</span> <span class="token number">1000000</span>
+
+<span class="token comment">//&#x6DFB;&#x52A0;three.js&#x573A;&#x666F;</span>
+visualizer<span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>scene3js<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x5C06;`Cesium`&#x76F8;&#x673A;&#x5B9A;&#x4F4D;&#x5230;three.js&#x573A;&#x666F;</span>
+<span class="token keyword keyword-var">var</span> boundingSphere <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">BoundingSphere</span></span><span class="token punctuation">.</span><span class="token method function property-access">clone</span><span class="token punctuation">(</span>geometry<span class="token punctuation">.</span><span class="token property-access">boundingSphere</span><span class="token punctuation">)</span>
+visualizer<span class="token punctuation">.</span><span class="token method function property-access">localToWorldCoordinates</span><span class="token punctuation">(</span>boundingSphere<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">,</span> boundingSphere<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">,</span> scene3js<span class="token punctuation">.</span><span class="token property-access">up</span><span class="token punctuation">)</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">camera</span><span class="token punctuation">.</span><span class="token method function property-access">flyToBoundingSphere</span><span class="token punctuation">(</span>boundingSphere<span class="token punctuation">)</span>
+</pre><p>&#x6548;&#x679C;&#x89C6;&#x9891;&#xFF1A;</p>
+<p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="5.cesium&#x548C;three.js&#x6DF1;&#x5EA6;&#x878D;&#x5408;.jpg">
+        <source id="mp4" src="./5.cesium&#x548C;three.js&#x6DF1;&#x5EA6;&#x878D;&#x5408;.mp4" poster="5.cesium&#x548C;three.js&#x6DF1;&#x5EA6;&#x878D;&#x5408;.jpg" type="video/mp4">
+    </video>
+</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF1A;</p>
+<ul>
+<li>&#x906E;&#x6321;&#x5173;&#x7CFB;&#x6B63;&#x786E;&#xFF1A;&#x65E0;&#x8BBA;&#x662F;&#x4E24;&#x4E2A;Entity&#x8FD8;&#x662F;&#x5730;&#x5F62;&#x90FD;&#x53EF;&#x4EE5;&#x628A;<code>Three.js</code>&#x521B;&#x5EFA;&#x7684;&#x5706;&#x73AF;&#x8282;&#x906E;&#x6321;&#xFF1B;</li>
+<li>&#x5149;&#x7167;&#x540C;&#x6B65;&#x6B63;&#x5E38;&#xFF1A;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x7684;&#x7269;&#x4F53;&#x90FD;&#x53EF;&#x4EE5;&#x540C;&#x6B65;&#x63A5;&#x6536;&#x592A;&#x9633;&#x5149;&#xFF1B;</li>
+<li>&#x9634;&#x5F71;&#x5173;&#x7CFB;&#x6B63;&#x786E;&#xFF1A;Entity&#x7684;&#x9634;&#x5F71;&#x53EF;&#x4EE5;&#x6295;&#x5C04;&#x5230;&#x5706;&#x73AF;&#x8282;&#x4E0A;&#xFF0C;&#x5706;&#x73AF;&#x8282;&#x7684;&#x9634;&#x5F71;&#x4E5F;&#x53EF;&#x4EE5;&#x6295;&#x5C04;&#x5230;Entity&#x4E0A;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x72EC;&#x7279;&#x4F18;&#x52BF;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x771F;&#x6B63;&#x7684;&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x7684;&#x6DF1;&#x5EA6;&#x4E0D;&#x4EC5;&#x6307;&#x4E24;&#x4E2A;&#x573A;&#x666F;<code>&#x201C;&#x6DF1;&#x5EA6;&#x7F13;&#x51B2;&#x533A;&#x201D;&#x7EDF;&#x4E00;</code>&#x8FD9;&#x4E00;&#x5C42;&#x542B;&#x4E49;&#xFF0C;&#x66F4;&#x6709;&#x6E32;&#x67D3;&#x901A;&#x9053;&#x3001;&#x5149;&#x7167;&#x3001;&#x9634;&#x5F71;&#x3001;&#x900F;&#x660E;&#x3001;&#x534A;&#x900F;&#x660E;&#x6DF7;&#x5408;&#xFF08;<code>Cesium</code>&#x7684;translucent&#x4E0D;&#x53EA;&#x662F;&#x7B49;&#x540C;&#x4E8E;<code>Three.js</code>&#x7684;transparent&#xFF09;&#x3001;&#x8D34;&#x5730;&#x3001;&#x540E;&#x671F;&#x7279;&#x6548;&#x7B49;&#x7B49;&#x7684;&#x7EDF;&#x4E00;&#x3002;<br>
+*</p>
+<blockquote>
+<p>&#x201C;&#x6DF1;&#x5EA6;&#x7F13;&#x51B2;&#x533A;&#x201D;&#x7EDF;&#x4E00;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;<code>Three.js</code>&#x6E32;&#x67D3;&#x5668;&#xFF0C;&#x8BA9;<code>Cesium</code>&#x548C;<code>Three.js</code>&#x5171;&#x4EAB;context&#xFF0C;&#x8FBE;&#x5230;&#x5171;&#x4EAB;&#x6DF1;&#x5EA6;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x89E3;&#x51B3;&#x4E86;&#x906E;&#x6321;&#x5173;&#x7CFB;&#x7684;&#x95EE;&#x9898;&#x3002;<br>
+&#x800C;&#x6E32;&#x67D3;&#x901A;&#x9053;&#x3001;&#x5149;&#x7167;&#x3001;&#x9634;&#x5F71;&#x3001;&#x900F;&#x660E;&#x3001;&#x534A;&#x900F;&#x660E;&#x6DF7;&#x5408;&#xFF08;<code>Cesium</code>&#x7684;translucent&#x4E0D;&#x53EA;&#x662F;&#x7B49;&#x540C;&#x4E8E;<code>Three.js</code>&#x7684;transparent&#xFF09;&#x3001;&#x8D34;&#x5730;&#x3001;&#x540E;&#x671F;&#x7279;&#x6548;&#x7B49;&#x7B49;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x4EC5;&#x901A;&#x8FC7;&#x5171;&#x4EAB;context&#x662F;&#x8FDC;&#x8FDC;&#x8FBE;&#x4E0D;&#x5230;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x7684;&#x7F3A;&#x70B9;&#x662F;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>Three.js</code>&#x7684;&#x540E;&#x671F;&#x7279;&#x6548;&#x4EE3;&#x7801;&#xFF0C;&#x540E;&#x671F;&#x7279;&#x6548;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;<code>Cesium</code>&#x7684;&#x540E;&#x671F;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x4E5F;&#x662F;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#x5728;&#x540E;&#x671F;&#x7279;&#x6548;&#x4E0A;&#x7684;&#x7EDF;&#x4E00;&#xFF0C;&#x90E8;&#x5206;&#x5E38;&#x7528;&#x7684;<code>Three.js</code>&#x793E;&#x533A;&#x7279;&#x6709;&#x7684;&#x540E;&#x671F;&#x7279;&#x6548;&#xFF0C;&#x5982;<code>OutlinePass</code>(3D&#x63CF;&#x8FB9;)&#x3001;<code>UnrealBloomPass</code>(&#x6CDB;&#x5149;&#x7279;&#x6548;)&#x3001;<code>SMAAPass</code>(&#x53E6;&#x4E00;&#x79CD;&#x6297;&#x952F;&#x9F7F;&#x7B97;&#x6CD5;)&#x7B49;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;<code>Cesium</code>&#x7248;&#x672C;&#xFF0C;&#x4E14;&#x5728;&#x4E0D;&#x4F7F;&#x7528;<code>Cesium</code>+<code>Three.js</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x4F7F;&#x7528;&#xFF0C;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x5F25;&#x8865;&#x4E86;&#x65B9;&#x6848;&#x7684;&#x4E00;&#x5927;&#x7F3A;&#x70B9;&#x3002;</p>
+<blockquote>
+<p>&#x4ECE;<code>Three.js</code>&#x8FC1;&#x79FB;&#x5230;<code>Cesium</code>&#x7684;&#x540E;&#x671F;&#x7279;&#x6548;&#xFF0C;&#x524D;&#x51E0;&#x671F;&#x6587;&#x7AE0;&#x5C31;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;&#x8FC7;&#x4E86;&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x3002;</p>
+</blockquote>
+<h5 class="mume-header" id="36-%E6%9B%B4%E5%A4%9A%E6%B7%B1%E5%BA%A6%E8%9E%8D%E5%90%88%E7%A4%BA%E4%BE%8B">3.6&#x3001;&#x66F4;&#x591A;&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x793A;&#x4F8B;</h5>
+
+<p><code>Cesium</code>&#x548C;<code>Three.js</code>&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x65B9;&#x6848;&#x7ECF;&#x8FC7;&#x4E00;&#x5E74;&#x7684;&#x5E94;&#x7528;&#x3001;&#x66F4;&#x65B0;&#x548C;&#x5B8C;&#x5584;&#xFF0C;&#x793A;&#x4F8B;&#x8986;&#x76D6;&#x4E86;<code>Three.js</code>&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7279;&#x6027;&#xFF0C;&#x8FD8;&#x589E;&#x52A0;&#x4E86;&#x8BB8;&#x591A;&#x4F18;&#x5316;&#x7684;&#x7279;&#x6027;&#x3002;</p>
+<p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="5.&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x793A;&#x4F8B;.jpg">
+        <source id="mp4" src="./5.&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x793A;&#x4F8B;.mp4" poster="5.&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x793A;&#x4F8B;.jpg" type="video/mp4">
+    </video>
+</p>
+<h3 class="mume-header" id="%E6%9C%89%E5%95%86%E7%94%A8%E9%9C%80%E6%B1%82%E7%9A%84%E4%BC%81%E4%B8%9A%E6%88%96%E8%80%85%E5%9B%A2%E9%98%9F%E6%AC%A2%E8%BF%8E%E5%92%A8%E8%AF%A2%E8%AF%95%E7%94%A8">&#x6709;&#x5546;&#x7528;&#x9700;&#x6C42;&#x7684;&#x4F01;&#x4E1A;&#x6216;&#x8005;&#x56E2;&#x961F;&#xFF0C;&#x6B22;&#x8FCE;&#x54A8;&#x8BE2;&#x8BD5;&#x7528;&#x3002;</h3>
+
+<h3 class="mume-header" id="%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%89%E7%BB%B4%E7%BD%91%E6%A0%BC3d%E7%AC%AC%E4%B8%80%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E6%96%87%E7%AB%A0">&#x6B22;&#x8FCE;&#x5173;&#x6CE8;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x3010;&#x4E09;&#x7EF4;&#x7F51;&#x683C;3D&#x3011;&#xFF0C;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x6587;&#x7AE0;</h3>
+
+<p><img src="http://os.mesh-3d.com/articles/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E3%80%90%E4%B8%89%E7%BB%B4%E7%BD%91%E6%A0%BC3D%E3%80%91.png" alt="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x3010;&#x4E09;&#x7EF4;&#x7F51;&#x683C;3D&#x3011;"></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
