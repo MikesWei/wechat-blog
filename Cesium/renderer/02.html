@@ -1,0 +1,604 @@
+<!DOCTYPE html><html><head>
+      <title>02</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/xiuyongwei/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="cesium-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95%E4%B9%8Bdrawcommand%E4%BA%8Cosgb%E5%80%BE%E6%96%9C%E6%A8%A1%E5%9E%8B%E5%B1%95%E7%A4%BA%E5%BA%94%E7%94%A8">Cesium &#x9AD8;&#x6027;&#x80FD;&#x6269;&#x5C55;&#x4E4B;DrawCommand&#xFF08;&#x4E8C;&#xFF09;&#xFF1A;OSGB&#x503E;&#x659C;&#x6A21;&#x578B;&#x5C55;&#x793A;&#x5E94;&#x7528;</h1>
+
+<p><code>DrawCommand</code> &#x662F; Cesium &#x6E32;&#x67D3;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x63A5;&#x53E3; <code>Entity</code>&#x3001;<code>Primitive</code>&#x3001;<code>Cesium3DTileSet</code>&#xFF0C;&#x4EE5;&#x53CA;&#x5730;&#x5F62;&#x548C;&#x5F71;&#x50CF;&#x7684;&#x6E32;&#x67D3;&#x7B49;&#x7B49;&#xFF0C;&#x5E95;&#x5C42;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4E2A; <code>DrawCommand</code> &#x5B8C;&#x6210;&#x7684;&#x3002;&#x5728;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x5F00;&#x53D1;&#x3001;&#x89C6;&#x89C9;&#x7279;&#x6548;&#x63D0;&#x5347;&#x3001;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x3001;&#x6E32;&#x67D3;&#x5230;&#x7EB9;&#x7406;&#xFF08;RTT&#xFF09;&#xFF0C;&#x751A;&#x81F3;&#x57FA;&#x4E8E; Cesium &#x5C01;&#x88C5;&#x81EA;&#x5DF1;&#x7684;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;&#x5B9A;&#x4E49;&#x72EC;&#x5BB6;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7B49;&#x7B49;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5BF9; <code>DrawCommand</code> &#x719F;&#x7EC3;&#x638C;&#x63E1;&#x3002;&#x800C;&#x8FD9;&#x90E8;&#x5206;&#x63A5;&#x53E3;&#xFF0C;Cesium &#x5B98;&#x65B9;&#x6587;&#x6863;&#x6CA1;&#x6709;&#x516C;&#x5F00;&#xFF0C;&#x7F51;&#x4E0A;&#x7684;&#x76F8;&#x5173;&#x8D44;&#x6599;&#x4E5F;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5B66;&#x4E60;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#xFF0C;&#x6240;&#x4EE5;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x7528;&#x51E0;&#x671F;&#x6587;&#x7AE0;&#xFF0C;&#x7531;&#x6D45;&#x5165;&#x6DF1;&#xFF0C;&#x5B9E;&#x7528;&#x4E3A;&#x4E3B;&#xFF0C;&#x529B;&#x6C42;&#x5168;&#x9762;&#x5730;&#x4ECB;&#x7ECD; <code>DrawCommand</code> &#x53CA;&#x76F8;&#x5173;&#x7C7B;&#x7684;&#x8FD0;&#x7528;&#x3002;</p>
+<p><img src="./drawCommand2.png" alt="drawCommand2"></p>
+<p>&#x4E0A;&#x4E00;&#x671F;&#xFF08;<a href="https://mp.weixin.qq.com/s?__biz=Mzg2MzY4NTMxNw==&amp;mid=2247485570&amp;idx=1&amp;sn=f29485c9f13255a64310653a2446e236&amp;chksm=ce759728f9021e3e6ca78a85765ac9569c5248ee47440d1a0098b93beeb99315eee144015c15&amp;token=1928108960&amp;lang=zh_CN#rd">&#x300A;Cesium &#x9AD8;&#x6027;&#x80FD;&#x6269;&#x5C55;&#x4E4B;DrawCommand&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x5165;&#x95E8;&#x300B;</a>&#xFF09;&#x4ECB;&#x7ECD; <code>DrawCommand</code> &#x57FA;&#x672C;&#x5C5E;&#x6027;&#xFF0C;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x80FD;&#x591F;&#x8F7B;&#x677E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;<code>DrawCommand</code>&#x548C;<code>&#x81EA;&#x5B9A;&#x4E49;Primitive</code>&#x4E86;&#x3002;&#x90A3;&#x4E48;<code>&#x81EA;&#x5B9A;&#x4E49;Primitive</code>&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;&#xFF1F;&#x8FD8;&#x6709;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x6DF1;&#x5165;&#x5B66;&#x4E60;&#x5462;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E00;&#x671F;&#x6211;&#x4EEC;&#x5148;&#x4E0D;&#x589E;&#x52A0;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x7EFC;&#x5408;&#x8FD0;&#x7528;&#x4E0A;&#x4E00;&#x671F;&#x4ECB;&#x7ECD;&#x7684;&#x57FA;&#x672C;&#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x53CA;&#x524D;&#x51E0;&#x671F;&#x4ECB;&#x7ECD;&#x7684;<code>Osgb</code>&#x89E3;&#x6790;&#x6280;&#x672F;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;<a href="https://mp.weixin.qq.com/s?__biz=Mzg2MzY4NTMxNw==&amp;mid=2247483831&amp;idx=1&amp;sn=094da60ed3630ee8fae9c652f9857284&amp;chksm=ce759e1df902170bdbcdaf4b555323ed27da14f617a17b97cff574bb11830d842ee04b5e3a92&amp;token=1928108960&amp;lang=zh_CN#rd">&#x300A;&#x5982;&#x4F55;&#x5728;Web&#x4E0A;&#x76F4;&#x63A5;&#x6D4F;&#x89C8;&#x5927;&#x89C4;&#x6A21;OSGB&#x683C;&#x5F0F;&#x503E;&#x659C;&#x6A21;&#x578B;&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x89E3;&#x6790;OSGB&#xFF0C;&#x9644;&#x6E90;&#x7801;<br>
+&#x300B;</a>&#x3001;<a href="https://mp.weixin.qq.com/s?__biz=Mzg2MzY4NTMxNw==&amp;mid=2247483870&amp;idx=1&amp;sn=943b1fefbd3b5fa82829b464898ceead&amp;chksm=ce759e74f902176220c9156b833b14f6422289085bbbcc1ade93df2b33be525d4ff0c1c1d9e8&amp;token=1928108960&amp;lang=zh_CN#rd">&#x300A;&#x5982;&#x4F55;&#x5728;Web&#x4E0A;&#x76F4;&#x63A5;&#x6D4F;&#x89C8;&#x5927;&#x89C4;&#x6A21;OSGB&#x683C;&#x5F0F;&#x503E;&#x659C;&#x6A21;&#x578B;&#xFF08;&#x4E8C;&#xFF09;&#xFF1A;&#x8F6C;&#x6362;OSGB&#x300B;</a>&#xFF09;&#xFF0C;&#x5B9E;&#x73B0;&#x5728;&#x4E0D;&#x4F9D;&#x8D56;<code>Three.js</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76F4;&#x63A5;&#x521B;&#x5EFA;<code>DrawCommand</code>&#x6765;&#x663E;&#x793A;<code>Osgb</code>&#x503E;&#x659C;&#x6444;&#x5F71;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x5F88;&#x5BB9;&#x6613;&#x603B;&#x7ED3;&#x51FA;&#x5173;&#x952E;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x5C06;<code>Osgb</code>&#x51E0;&#x4F55;&#x4F53;&#x8F6C;&#x6210;<code>Cesium.Geometry</code>&#xFF1B;</li>
+<li>&#x5C06;<code>Osgb</code>&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x8F6C;&#x4E3A;<code>Cesium.Texture</code>&#xFF1B;</li>
+<li>&#x5728;<code>Shader</code>&#x4E2D;&#x8BFB;&#x53D6;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x3002;</li>
+</ul>
+<h4 class="mume-header" id="1-%E5%B0%86osgb%E5%87%A0%E4%BD%95%E4%BD%93%E8%BD%AC%E6%88%90cesiumgeometry">1&#x3001;&#x5C06;Osgb&#x51E0;&#x4F55;&#x4F53;&#x8F6C;&#x6210;Cesium.Geometry</h4>
+
+<p>&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x57FA;&#x4E8E;<code>&#x8F6C;&#x6362;OSGB</code>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x7A0D;&#x5FAE;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x3002;</p>
+<ul>
+<li>&#x7528; <code>Cesium.GeometryAttribute</code> &#x66FF;&#x4EE3; <code>THREE.BufferAttribute</code>&#xFF1B;</li>
+<li>&#x7528; <code>Cesium.Geometry</code> &#x66FF;&#x4EE3; <code>THREE.BufferGeometry</code>&#xFF1B;</li>
+<li><code>uv</code>&#x5C5E;&#x6027;&#x6211;&#x4EEC;&#x6309;&#x7167;<code>Cesium</code>&#x7684;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF0C;&#x6539;&#x6210;<code>st</code>&#xFF1B;</li>
+<li>&#x7D22;&#x5F15;&#x6570;&#x7EC4;&#xFF0C;&#x6839;&#x636E;&#x6700;&#x5927;&#x503C;&#x6765;&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x5185;&#x5B58;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">parseGeometry</span><span class="token punctuation">(</span><span class="token parameter">osgGeometry</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x9876;&#x70B9;&#x5C5E;&#x6027;</span>
+    <span class="token keyword keyword-var">var</span> positions <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>osgGeometry<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">VertexArray</span></span><span class="token punctuation">.</span><span class="token method function property-access">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> uvs <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>osgGeometry<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">TexCoordArray</span></span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//&#x7D22;&#x5F15;</span>
+    <span class="token keyword keyword-var">var</span> primitiveSet <span class="token operator">=</span> osgGeometry<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">PrimitiveSetList</span></span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-var">var</span> indices <span class="token operator">=</span> primitiveSet<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>primitiveSet<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-let">let</span> newIndices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-let">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> indices<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-let">let</span> i0 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i1 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> i2 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> i3 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            newIndices<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>i0<span class="token punctuation">,</span> i1<span class="token punctuation">,</span> i3<span class="token punctuation">,</span> i1<span class="token punctuation">,</span> i2<span class="token punctuation">,</span> i3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        indices <span class="token operator">=</span> newIndices<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>indices<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//&#x6839;&#x636E;&#x6700;&#x5927;&#x503C;&#x6765;&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x7684;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x5185;&#x5B58;</span>
+        <span class="token keyword keyword-var">var</span> max <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">.</span><span class="token method function property-access">apply</span><span class="token punctuation">(</span><span class="token keyword null nil keyword-null">null</span><span class="token punctuation">,</span> indices<span class="token punctuation">)</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>max <span class="token operator">&gt;</span> <span class="token number">65535</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            indices <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Uint32Array</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword control-flow keyword-else">else</span> <span class="token punctuation">{</span>
+            indices <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Uint16Array</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//&#x6784;&#x9020;Cesium&#x51E0;&#x4F55;&#x4F53;</span>
+    <span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Geometry</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        attributes<span class="token operator">:</span> <span class="token punctuation">{</span>
+            position<span class="token operator">:</span> <span class="token punctuation">{</span>
+                componentDatatype<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ComponentDatatype</span></span><span class="token punctuation">.</span><span class="token constant">FLOAT</span><span class="token punctuation">,</span>
+                componentsPerAttribute<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                values<span class="token operator">:</span> positions
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            st<span class="token operator">:</span> <span class="token punctuation">{</span>
+                componentDatatype<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ComponentDatatype</span></span><span class="token punctuation">.</span><span class="token constant">FLOAT</span><span class="token punctuation">,</span>
+                componentsPerAttribute<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                values<span class="token operator">:</span> uvs
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        indices<span class="token operator">:</span> indices
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> geometry
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="2-%E5%B0%86osgb%E7%BA%B9%E7%90%86%E8%B4%B4%E5%9B%BE%E8%BD%AC%E4%B8%BAcesiumtexture">2&#x3001;&#x5C06;Osgb&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x8F6C;&#x4E3A;Cesium.Texture</h4>
+
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x57FA;&#x4E8E;<code>&#x8F6C;&#x6362;OSGB</code>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x8FC7;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x63D0;&#x53D6;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;<code>Cesium</code>&#x521B;&#x5EFA;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x5BF9;&#x8C61;&#x65F6;&#x4F1A;&#x7ACB;&#x5373;&#x5C06;&#x8D34;&#x56FE;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x5230;&#x7ED8;&#x56FE;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5FC5;&#x987B;&#x5728;&#x83B7;&#x53D6;<code>context</code>&#x4E4B;&#x540E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6E32;&#x67D3;&#x5FAA;&#x73AF;&#x5F00;&#x59CB;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x521B;&#x5EFA;&#x3002;&#x8FD9;&#x70B9;&#x548C;<code>Three.js</code>&#x4E0D;&#x540C;&#xFF0C;<code>THREE.Texture</code>&#x53EA;&#x5C01;&#x88C5;&#x8D34;&#x56FE;&#x6570;&#x636E;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x7ED1;&#x5B9A;&#x662F;&#x6E32;&#x67D3;&#x5668;&#x5C42;&#x8D1F;&#x8D23;&#x7684;&#xFF08;<code>Three.js</code>&#x7684;&#x6E32;&#x67D3;&#x5668;&#x53EF;&#x6709;&#x591A;&#x4E2A;&#x5B9E;&#x73B0;&#xFF0C;&#x6BD4;&#x5982;<code>WebGLRenderer</code>&#x3001;<code>WebGPURenderer</code>&#x3001;<code>CSSRenderer</code>&#x3001;<code>SVGRenderer</code>&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;&#x6E32;&#x67D3;&#x5FAA;&#x73AF;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">parseTexture</span><span class="token punctuation">(</span><span class="token parameter">osgStateSet<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> osgImage <span class="token operator">=</span> osgStateSet<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">TextureAttributeList</span></span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">StateAttribute</span></span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Image</span></span>
+
+    <span class="token keyword keyword-var">var</span> fileName <span class="token operator">=</span> osgImage<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Name</span></span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-const">const</span> isJPEG <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token method function property-access">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.jpe?g($|\?)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+    <span class="token keyword keyword-const">const</span> isPNG <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token method function property-access">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.png($|\?)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isPNG <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isJPEG<span class="token punctuation">)</span> <span class="token keyword control-flow keyword-return">return</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-var">var</span> mimeType <span class="token operator">=</span> isPNG <span class="token operator">?</span> <span class="token string">&apos;image/png&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;image/jpeg&apos;</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> imageUri <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>osgImage<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Data</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> mimeType <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    imageUri <span class="token operator">=</span> <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token method function property-access">createObjectURL</span><span class="token punctuation">(</span>imageUri<span class="token punctuation">)</span>
+    <span class="token comment">//&#x52A0;&#x8F7D;&#x56FE;&#x7247;</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Resource</span></span><span class="token punctuation">.</span><span class="token method function property-access">fetchImage</span><span class="token punctuation">(</span>imageUri<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">img</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">//&#x521B;&#x5EFA;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x5BF9;&#x8C61;</span>
+        <span class="token keyword keyword-var">var</span> texture <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Texture</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+            source<span class="token operator">:</span> img<span class="token punctuation">,</span>
+            width<span class="token operator">:</span> img<span class="token punctuation">.</span><span class="token property-access">width</span><span class="token punctuation">,</span>
+            height<span class="token operator">:</span> img<span class="token punctuation">.</span><span class="token property-access">height</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-return">return</span> texture
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="3-%E5%9C%A8shader%E4%B8%AD%E8%AF%BB%E5%8F%96%E7%BA%B9%E7%90%86%E8%B4%B4%E5%9B%BE">3&#x3001;&#x5728;<code>Shader</code>&#x4E2D;&#x8BFB;&#x53D6;&#x7EB9;&#x7406;&#x8D34;&#x56FE;</h4>
+
+<p>&#x6211;&#x4EEC;&#x6539;&#x52A8;&#x4E00;&#x4E0B;&#x4E0A;&#x4E00;&#x671F;&#x7684;<code>shader</code>&#x4EE3;&#x7801;&#xFF0C;&#x589E;&#x52A0;<code>st</code>&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x5C06;<code>st</code>&#x4ECE;<code>vertexShader</code>&#x4F20;&#x5230;<code>fragmentShader</code>&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x8001;&#x624B;&#x6765;&#x8BF4;&#x662F;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x4E86;&#x3002;<br>
+<code>vertexShader</code>&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="glsl" class="language-glsl"><span class="token keyword keyword-attribute">attribute</span> <span class="token keyword keyword-vec3">vec3</span> position<span class="token punctuation">;</span>
+<span class="token keyword keyword-attribute">attribute</span> <span class="token keyword keyword-vec2">vec2</span> st<span class="token punctuation">;</span>
+<span class="token comment">//&#x5411;fragmentShader&#x4F20;&#x9012;</span>
+<span class="token keyword keyword-varying">varying</span> <span class="token keyword keyword-vec2">vec2</span> v_st<span class="token punctuation">;</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//&#x63A5;&#x6536;js&#x4F20;&#x6765;&#x7684;&#x503C;</span>
+    v_st<span class="token operator">=</span>st<span class="token punctuation">;</span>
+    gl_Position <span class="token operator">=</span> czm_projection  <span class="token operator">*</span> czm_modelView <span class="token operator">*</span> <span class="token keyword keyword-vec4">vec4</span><span class="token punctuation">(</span> position <span class="token punctuation">,</span> <span class="token number">1.</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p><code>fragmentShader</code>&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="glsl" class="language-glsl"><span class="token keyword keyword-uniform">uniform</span> <span class="token keyword keyword-sampler2D">sampler2D</span> map<span class="token punctuation">;</span> 
+<span class="token comment">//&#x63A5;&#x6536;vertexShader&#x4F20;&#x6765;&#x7684;&#x503C;</span>
+<span class="token keyword keyword-varying">varying</span> <span class="token keyword keyword-vec2">vec2</span> v_st<span class="token punctuation">;</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    gl_FragColor<span class="token operator">=</span><span class="token function">texture2D</span><span class="token punctuation">(</span> map <span class="token punctuation">,</span> v_st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x7EB9;&#x7406;&#x8D34;&#x56FE;<code>map</code>&#x9700;&#x8981;&#x901A;&#x8FC7;<code>uniform</code>&#x4F20;&#x9012;&#xFF0C;&#x6240;&#x4EE5;<code>uniformMap</code>&#x4E5F;&#x9700;&#x8981;&#x8C03;&#x6574;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token comment">//&#x5904;&#x7406;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#xFF0C;&#x5148;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x7A7A;&#x767D;&#x8D34;&#x56FE;&#xFF0C;&#x7B49;&#x6A21;&#x578B;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x8F6C;&#x6362;&#x5B8C;&#x6210;&#xFF0C;&#x518D;&#x66FF;&#x6362;&#x6389;</span>
+<span class="token keyword keyword-var">var</span> map <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Texture</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+    width<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">2</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">parseTexture</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">osgGeometry</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">StateSet</span></span><span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">texture</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x91CA;&#x653E;&#x9ED8;&#x8BA4;&#x7EB9;&#x7406;&#x8D34;&#x56FE;</span>
+    map<span class="token punctuation">.</span><span class="token method function property-access">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x4F7F;&#x7528;&#x8F6C;&#x6362;&#x597D;&#x7684;&#x6A21;&#x578B;&#x7EB9;&#x7406;&#x8D34;&#x56FE;</span>
+    map <span class="token operator">=</span> texture<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-var">var</span> uniformMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-return">return</span> map
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="4-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81">4&#x3001;&#x5B8C;&#x6574;&#x4EE3;&#x7801;</h4>
+
+<p>&#x6784;&#x9020;<code>&#x81EA;&#x5B9A;&#x4E49;Primitive</code>&#x65F6;&#x9700;&#x8981;&#x4F20;&#x5165;<code>osg::Geometry</code>&#x7C7B;&#x578B;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x521B;&#x5EFA;<code>DrawCommand</code>&#x7684;&#x65F6;&#x8C03;&#x7528;&#x8F6C;&#x6362;&#x51E0;&#x4F55;&#x4F53;&#x548C;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">parseGeometry</span><span class="token punctuation">(</span><span class="token parameter">osgGeometry</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword keyword-var">var</span> positions <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>osgGeometry<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">VertexArray</span></span><span class="token punctuation">.</span><span class="token method function property-access">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> uvs <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>osgGeometry<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">TexCoordArray</span></span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-var">var</span> primitiveSet <span class="token operator">=</span> osgGeometry<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">PrimitiveSetList</span></span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-var">var</span> indices <span class="token operator">=</span> primitiveSet<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>primitiveSet<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword keyword-let">let</span> newIndices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-let">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> indices<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-let">let</span> i0 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i1 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> i2 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> i3 <span class="token operator">=</span> indices<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            newIndices<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>i0<span class="token punctuation">,</span> i1<span class="token punctuation">,</span> i3<span class="token punctuation">,</span> i1<span class="token punctuation">,</span> i2<span class="token punctuation">,</span> i3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        indices <span class="token operator">=</span> newIndices<span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>indices<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword keyword-var">var</span> max <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">.</span><span class="token method function property-access">apply</span><span class="token punctuation">(</span><span class="token keyword null nil keyword-null">null</span><span class="token punctuation">,</span> indices<span class="token punctuation">)</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>max <span class="token operator">&gt;</span> <span class="token number">65535</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            indices <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Uint32Array</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword control-flow keyword-else">else</span> <span class="token punctuation">{</span>
+            indices <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Uint16Array</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Geometry</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        attributes<span class="token operator">:</span> <span class="token punctuation">{</span>
+            position<span class="token operator">:</span> <span class="token punctuation">{</span>
+                componentDatatype<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ComponentDatatype</span></span><span class="token punctuation">.</span><span class="token constant">FLOAT</span><span class="token punctuation">,</span>
+                componentsPerAttribute<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                values<span class="token operator">:</span> positions
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            st<span class="token operator">:</span> <span class="token punctuation">{</span>
+                componentDatatype<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ComponentDatatype</span></span><span class="token punctuation">.</span><span class="token constant">FLOAT</span><span class="token punctuation">,</span>
+                componentsPerAttribute<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                values<span class="token operator">:</span> uvs
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        indices<span class="token operator">:</span> indices
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> geometry
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">parseTexture</span><span class="token punctuation">(</span><span class="token parameter">osgStateSet<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> osgImage <span class="token operator">=</span> osgStateSet<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">TextureAttributeList</span></span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">StateAttribute</span></span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Image</span></span>
+
+    <span class="token keyword keyword-var">var</span> fileName <span class="token operator">=</span> osgImage<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Name</span></span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-const">const</span> isJPEG <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token method function property-access">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.jpe?g($|\?)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+    <span class="token keyword keyword-const">const</span> isPNG <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token method function property-access">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.png($|\?)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isPNG <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isJPEG<span class="token punctuation">)</span> <span class="token keyword control-flow keyword-return">return</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-var">var</span> mimeType <span class="token operator">=</span> isPNG <span class="token operator">?</span> <span class="token string">&apos;image/png&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;image/jpeg&apos;</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> imageUri <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>osgImage<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Data</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> mimeType <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    imageUri <span class="token operator">=</span> <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token method function property-access">createObjectURL</span><span class="token punctuation">(</span>imageUri<span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Resource</span></span><span class="token punctuation">.</span><span class="token method function property-access">fetchImage</span><span class="token punctuation">(</span>imageUri<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">img</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-var">var</span> texture <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Texture</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+            source<span class="token operator">:</span> img<span class="token punctuation">,</span>
+            width<span class="token operator">:</span> img<span class="token punctuation">.</span><span class="token property-access">width</span><span class="token punctuation">,</span>
+            height<span class="token operator">:</span> img<span class="token punctuation">.</span><span class="token property-access">height</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-return">return</span> texture
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-class">class</span> <span class="token class-name">MyPrimitive</span> <span class="token punctuation">{</span>
+
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">modelMatrix<span class="token punctuation">,</span> osgGeometry</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">modelMatrix</span> <span class="token operator">=</span> modelMatrix <span class="token operator">||</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Matrix4</span></span><span class="token punctuation">.</span><span class="token constant">IDENTITY</span><span class="token punctuation">.</span><span class="token method function property-access">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span> <span class="token operator">=</span> <span class="token keyword null nil keyword-null">null</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">osgGeometry</span> <span class="token operator">=</span> osgGeometry
+
+    <span class="token punctuation">}</span>
+
+    <span class="token function">createCommand</span><span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword keyword-var">var</span> modelMatrix <span class="token operator">=</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">modelMatrix</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x8F6C;&#x6362;&#x51E0;&#x4F55;&#x4F53;</span>
+        <span class="token keyword keyword-var">var</span> geometry <span class="token operator">=</span> <span class="token function">parseGeometry</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">osgGeometry</span><span class="token punctuation">)</span>
+         
+        <span class="token keyword keyword-var">var</span> attributeLocations <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">GeometryPipeline</span></span><span class="token punctuation">.</span><span class="token method function property-access">createAttributeLocations</span><span class="token punctuation">(</span>geometry<span class="token punctuation">)</span>
+
+        <span class="token keyword keyword-var">var</span> va <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">VertexArray</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromGeometry</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+            geometry<span class="token operator">:</span> geometry<span class="token punctuation">,</span>
+            attributeLocations<span class="token operator">:</span> attributeLocations
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword keyword-var">var</span> vs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        attribute vec3 position;
+        attribute vec2 st;
+        varying vec2 v_st;
+        void main(){
+            v_st=st;
+            gl_Position = czm_projection  * czm_modelView * vec4( position , 1. );
+        }
+        </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-var">var</span> fs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        uniform sampler2D map; 
+        varying vec2 v_st;
+        void main(){
+            gl_FragColor=texture2D( map , v_st);
+        }
+        </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-var">var</span> shaderProgram <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ShaderProgram</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromCache</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+            vertexShaderSource<span class="token operator">:</span> vs<span class="token punctuation">,</span>
+            fragmentShaderSource<span class="token operator">:</span> fs<span class="token punctuation">,</span>
+            attributeLocations<span class="token operator">:</span> attributeLocations
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token comment">//&#x5904;&#x7406;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#xFF0C;&#x5148;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x7A7A;&#x767D;&#x8D34;&#x56FE;&#xFF0C;&#x7B49;&#x6A21;&#x578B;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#x8F6C;&#x6362;&#x5B8C;&#x6210;&#xFF0C;&#x518D;&#x66FF;&#x6362;&#x6389;</span>
+        <span class="token keyword keyword-var">var</span> map <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Texture</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+            width<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token function">parseTexture</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">osgGeometry</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">StateSet</span></span><span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">texture</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">//&#x91CA;&#x653E;&#x9ED8;&#x8BA4;&#x7EB9;&#x7406;&#x8D34;&#x56FE;</span>
+            map<span class="token punctuation">.</span><span class="token method function property-access">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//&#x4F7F;&#x7528;&#x8F6C;&#x6362;&#x597D;&#x7684;&#x6A21;&#x578B;&#x7EB9;&#x7406;&#x8D34;&#x56FE;</span>
+            map <span class="token operator">=</span> texture<span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token keyword keyword-var">var</span> uniformMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword control-flow keyword-return">return</span> map
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword keyword-var">var</span> renderState <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">RenderState</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromCache</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            cull<span class="token operator">:</span> <span class="token punctuation">{</span>
+                enabled<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                face<span class="token operator">:</span><span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">CullFace</span></span><span class="token punctuation">.</span><span class="token constant">BACK</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            depthTest<span class="token operator">:</span> <span class="token punctuation">{</span>
+                enabled<span class="token operator">:</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span> <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>DrawCommand</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            modelMatrix<span class="token operator">:</span> modelMatrix<span class="token punctuation">,</span>
+            vertexArray<span class="token operator">:</span> va<span class="token punctuation">,</span>
+            shaderProgram<span class="token operator">:</span> shaderProgram<span class="token punctuation">,</span>
+            uniformMap<span class="token operator">:</span> uniformMap<span class="token punctuation">,</span>
+            renderState<span class="token operator">:</span> renderState<span class="token punctuation">,</span>
+            pass<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Pass</span></span><span class="token punctuation">.</span><span class="token constant">OPAQUE</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token doc-comment comment">/**
+     * 
+     * <span class="token keyword keyword-@param">@param</span> <span class="token class-name"><span class="token punctuation">{</span>Cesium<span class="token punctuation">.</span>FrameState<span class="token punctuation">}</span></span> <span class="token parameter">frameState</span> 
+     */</span>
+    <span class="token function">update</span><span class="token punctuation">(</span><span class="token parameter">frameState</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token method function property-access">createCommand</span><span class="token punctuation">(</span>frameState<span class="token punctuation">.</span><span class="token property-access">context</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        frameState<span class="token punctuation">.</span><span class="token property-access">commandList</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="5-%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B%E5%8F%8A%E6%95%88%E6%9E%9C">5&#x3001;&#x8C03;&#x7528;&#x793A;&#x4F8B;&#x53CA;&#x6548;&#x679C;</h4>
+
+<p>&#x89E3;&#x6790;&#xFF0C;&#x904D;&#x5386;&#x8282;&#x70B9;&#xFF0C;&#x5904;&#x7406;&#x7C7B;&#x578B;&#x4E3A;<code>osg::Geometry</code>&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>&#x81EA;&#x5B9A;&#x4E49;Primitive</code>&#x6765;&#x5C55;&#x793A;&#x8BE5;&#x8282;&#x70B9;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token operator">*</span> <span class="token keyword module keyword-as">as</span> osg</span> <span class="token keyword module keyword-from">from</span> <span class="token string">&apos;osg-serializer-browser&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-var">var</span> origin <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> modelMatrix <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Transforms</span></span><span class="token punctuation">.</span><span class="token method function property-access">eastNorthUpToFixedFrame</span><span class="token punctuation">(</span>origin<span class="token punctuation">)</span>
+
+<span class="token keyword keyword-var">var</span> url <span class="token operator">=</span> <span class="token string">&apos;../../assets/sampleData/models/tile_0_0_0_tex_children.osgb&apos;</span><span class="token punctuation">;</span>
+<span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Resource</span></span><span class="token punctuation">.</span><span class="token method function property-access">fetchArrayBuffer</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">buf</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> osgObj <span class="token operator">=</span> osg<span class="token punctuation">.</span><span class="token method function property-access">readBuffer</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+    osg<span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">TraverseNodes</span></span><span class="token punctuation">(</span>osgObj<span class="token punctuation">,</span> <span class="token parameter">node</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Type</span></span> <span class="token operator">==</span> <span class="token string">&apos;osg::Geometry&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-var">var</span> primitive <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MyPrimitive</span><span class="token punctuation">(</span>modelMatrix<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">primitives</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>primitive<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><p>&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;<br>
+<img src="./drawCommand2.png" alt="drawCommand2"></p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x5927;&#x5BB6;&#x5BF9;&#x4E8E;&#x6587;&#x7AE0;&#x5F00;&#x5934;&#x7684;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#x5E94;&#x8BE5;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7B54;&#x6848;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x4E0B;&#x671F;&#x7EE7;&#x7EED;&#xFF01;</p>
+<h3 class="mume-header" id="%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%89%E7%BB%B4%E7%BD%91%E6%A0%BC3d%E7%AC%AC%E4%B8%80%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E6%96%87%E7%AB%A0">&#x6B22;&#x8FCE;&#x5173;&#x6CE8;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x3010;&#x4E09;&#x7EF4;&#x7F51;&#x683C;3D&#x3011;&#xFF0C;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x6587;&#x7AE0;</h3>
+
+<p><img src="http://os.mesh-3d.com/articles/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E3%80%90%E4%B8%89%E7%BB%B4%E7%BD%91%E6%A0%BC3D%E3%80%91.png" alt="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x3010;&#x4E09;&#x7EF4;&#x7F51;&#x683C;3D&#x3011;"></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

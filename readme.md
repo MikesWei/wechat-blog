@@ -17,6 +17,9 @@
 
 #### #Cesium渲染器
 * 1、[Cesium 高性能扩展之DrawCommand（一）：入门](Cesium/renderer/01.md)
+* 2、[Cesium 高性能扩展之DrawCommand（二）：OSGB倾斜模型展示应用](Cesium/renderer/02.md)
+* 2、[Cesium 高性能扩展之DrawCommand（三）：显隐和点选](Cesium/renderer/03.md)
+* 2、[Cesium 高性能扩展之DrawCommand（四）：阴影和实例化](Cesium/renderer/04.md)
 
 ### 欢迎关注微信公众号【三维网格3D】，第一时间获取最新文章 ###
 ![微信公众号【三维网格3D】](http://os.mesh-3d.com/articles/微信公众号【三维网格3D】.png)

@@ -1,0 +1,560 @@
+<!DOCTYPE html><html><head>
+      <title>03</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/xiuyongwei/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="cesium-%E9%AB%98%E6%80%A7%E8%83%BD%E6%89%A9%E5%B1%95%E4%B9%8Bdrawcommand%E4%B8%89%E6%98%BE%E9%9A%90%E5%92%8C%E7%82%B9%E9%80%89">Cesium &#x9AD8;&#x6027;&#x80FD;&#x6269;&#x5C55;&#x4E4B;DrawCommand&#xFF08;&#x4E09;&#xFF09;&#xFF1A;&#x663E;&#x9690;&#x548C;&#x70B9;&#x9009;</h1>
+
+<p><code>DrawCommand</code> &#x662F; Cesium &#x6E32;&#x67D3;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x63A5;&#x53E3; <code>Entity</code>&#x3001;<code>Primitive</code>&#x3001;<code>Cesium3DTileSet</code>&#xFF0C;&#x4EE5;&#x53CA;&#x5730;&#x5F62;&#x548C;&#x5F71;&#x50CF;&#x7684;&#x6E32;&#x67D3;&#x7B49;&#x7B49;&#xFF0C;&#x5E95;&#x5C42;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4E2A; <code>DrawCommand</code> &#x5B8C;&#x6210;&#x7684;&#x3002;&#x5728;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x5F00;&#x53D1;&#x3001;&#x89C6;&#x89C9;&#x7279;&#x6548;&#x63D0;&#x5347;&#x3001;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x3001;&#x6E32;&#x67D3;&#x5230;&#x7EB9;&#x7406;&#xFF08;RTT&#xFF09;&#xFF0C;&#x751A;&#x81F3;&#x57FA;&#x4E8E; Cesium &#x5C01;&#x88C5;&#x81EA;&#x5DF1;&#x7684;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;&#x5B9A;&#x4E49;&#x72EC;&#x5BB6;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7B49;&#x7B49;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5BF9; <code>DrawCommand</code> &#x719F;&#x7EC3;&#x638C;&#x63E1;&#x3002;&#x800C;&#x8FD9;&#x90E8;&#x5206;&#x63A5;&#x53E3;&#xFF0C;Cesium &#x5B98;&#x65B9;&#x6587;&#x6863;&#x6CA1;&#x6709;&#x516C;&#x5F00;&#xFF0C;&#x7F51;&#x4E0A;&#x7684;&#x76F8;&#x5173;&#x8D44;&#x6599;&#x4E5F;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5B66;&#x4E60;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#xFF0C;&#x6240;&#x4EE5;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x7528;&#x51E0;&#x671F;&#x6587;&#x7AE0;&#xFF0C;&#x7531;&#x6D45;&#x5165;&#x6DF1;&#xFF0C;&#x5B9E;&#x7528;&#x4E3A;&#x4E3B;&#xFF0C;&#x529B;&#x6C42;&#x5168;&#x9762;&#x5730;&#x4ECB;&#x7ECD; <code>DrawCommand</code> &#x53CA;&#x76F8;&#x5173;&#x7C7B;&#x7684;&#x8FD0;&#x7528;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x88AB;&#x5173;&#x6CE8;&#x6211;&#x4EEC;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x50AC;&#x66F4;&#xFF0C;&#x8FD8;&#x662F;&#x633A;&#x5F00;&#x5FC3;&#x7684;&#x1F602;&#xFF0C;&#x516C;&#x53F8;&#x4E8B;&#x52A1;&#x7565;&#x5FD9;&#xFF0C;&#x53EA;&#x6709;&#x6DF1;&#x591C;&#x7801;&#x5B57;&#x6765;&#x8D76;&#x7A3F;&#x4E86;&#xFF5E;&#x90A3;&#x4E48;&#x672C;&#x7BC7;&#x6211;&#x4EEC;&#x5C31;&#x6309;&#x7167;&#x8BA1;&#x5212;&#x5F80;&#x4E0B;&#x5199;&#xFF0C;&#x4ECB;&#x7ECD;<code>&#x81EA;&#x5B9A;&#x4E49;Primitive</code>&#x7684;&#x663E;&#x9690;&#x63A7;&#x5236;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x652F;&#x6301;<code>scene.pick</code>&#xFF0C;&#x5B9E;&#x73B0;&#x8981;&#x7D20;&#x62FE;&#x53D6;&#x67E5;&#x8BE2;&#x3002;</p>
+<p><img src="./drawCommand3.png" alt="drawCommand3"></p>
+<h3 class="mume-header" id="1-%E6%98%BE%E9%9A%90%E6%8E%A7%E5%88%B6">1&#x3001;&#x663E;&#x9690;&#x63A7;&#x5236;</h3>
+
+<p>&#x4ECE;&#x524D;&#x9762;&#x4E24;&#x7BC7;&#x7684;&#x4EE3;&#x7801;&#x770B;&#xFF0C;&#x663E;&#x9690;&#x63A7;&#x5236;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;<code>update</code>&#x65B9;&#x6CD5;&#x7684;&#x5F00;&#x5934;&#x52A0;&#x5165;&#x663E;&#x9690;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x9690;&#x85CF;&#x5219;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#xFF0C;&#x5426;&#x5219;&#x7EE7;&#x7EED;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token comment">//...</span>
+<span class="token function">update</span><span class="token punctuation">(</span><span class="token parameter">frameState</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">show</span><span class="token punctuation">)</span> <span class="token keyword control-flow keyword-return">return</span><span class="token punctuation">;</span>
+    <span class="token comment">//...</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//...</span>
+</pre><p>&#x8003;&#x8651;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06;&#x591A;&#x4E2A;&#x8981;&#x7D20;&#x7684;&#x51E0;&#x4F55;&#x4F53;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x51E0;&#x4F55;&#x4F53;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x51CF;&#x5C11;&#x7ED8;&#x56FE;&#x6279;&#x6B21;&#xFF08;<code>DrawCommand</code>&#x7684;&#x6570;&#x91CF;&#xFF09;&#x63D0;&#x5347;&#x6027;&#x80FD;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x540C;&#x65F6;&#x663E;&#x793A;&#x6216;&#x8005;&#x9690;&#x85CF;&#x8FD9;&#x4E9B;&#x8981;&#x7D20;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x5982;&#x4F55;&#x63A7;&#x5236;&#x5176;&#x4E2D;&#x4EFB;&#x4E00;&#x8981;&#x7D20;&#x7684;&#x663E;&#x9690;&#x5462;&#xFF1F;</p>
+<p>&#x53C2;&#x8003;<code>Cesium</code>&#x7684;&#x5176;&#x4ED6;<code>Primitive</code>&#x7C7B;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x4ED6;&#x4EEC;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;<code>batchId</code>&#x6216;&#x8005;<code>a_batchId</code>&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x663E;&#x9690;&#x5916;&#xFF0C;&#x5728;<code>3D Tiles</code>&#x6837;&#x5F0F;&#x5F15;&#x64CE;&#x3001;&#x8981;&#x7D20;&#x62FE;&#x53D6;&#x67E5;&#x8BE2;&#xFF08;<code>pick</code>&#xFF09;&#x7B49;&#x90FD;&#x8D77;&#x5230;&#x5173;&#x952E;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x57FA;&#x4E8E;<code>batchId</code>&#x7684;&#x663E;&#x9690;&#x63A7;&#x5236;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#xFF1A;</p>
+<ul>
+<li>&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x8981;&#x7D20;&#x521B;&#x5EFA;<code>batchId</code>&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;&#x7F16;&#x53F7;&#xFF1B;</li>
+<li>&#x4E3A;&#x8981;&#x7D20;&#x51E0;&#x4F55;&#x4F53;&#x521B;&#x5EFA;<code>batchId</code>&#x9876;&#x70B9;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x5C06;<code>batchId</code>&#x503C;&#x9010;&#x4E2A;&#x5199;&#x5165;&#x9876;&#x70B9;&#x5C5E;&#x6027;&#x6570;&#x7EC4;&#xFF1B;</li>
+<li>&#x5408;&#x5E76;&#x6240;&#x6709;&#x8981;&#x7D20;&#x51E0;&#x4F55;&#x4F53;&#xFF1B;</li>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x7EB9;&#x7406;&#x8D34;&#x56FE;&#xFF0C;&#x5BBD;&#x5EA6;&#x7B49;&#x4E8E;&#x8981;&#x7D20;&#x6570;&#x91CF;&#xFF0C;&#x9AD8;&#x5EA6;&#x4E3A;1&#xFF0C;&#x7528;<code>0</code>&#x548C;<code>1</code>&#x8868;&#x793A;&#x8981;&#x7D20;&#x9690;&#x85CF;&#x6216;&#x8005;&#x663E;&#x793A;&#xFF0C;&#x5199;&#x5165;&#x7EB9;&#x7406;&#x6570;&#x636E;&#xFF1B;</li>
+<li>&#x5728;<code>shader</code>&#x4E2D;&#x6839;&#x636E;<code>batchId</code>&#x5E76;&#x8BA1;&#x7B97;uv&#xFF0C;&#x4ECE;&#x663E;&#x9690;&#x7EB9;&#x7406;&#x83B7;&#x53D6;&#x8981;&#x7D20;&#x7684;&#x663E;&#x9690;&#x6807;&#x8BB0;&#xFF0C;&#x5982;&#x679C;&#x5C0F;&#x4E8E;<code>1</code>&#x5219;<code>discard</code>&#xFF1B;</li>
+<li>&#x5F53;&#x67D0;&#x4E2A;&#x8981;&#x7D20;&#x663E;&#x9690;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x66F4;&#x65B0;&#x663E;&#x9690;&#x7EB9;&#x7406;&#x3002;</li>
+</ul>
+<p>&#x76EE;&#x524D;&#x6211;&#x4EEC;&#x5148;&#x4E0D;&#x8981;&#x60F3;&#x90A3;&#x4E48;&#x590D;&#x6742;&#xFF0C;&#x7B49;&#x638C;&#x63E1;&#x4E86;&#x66F4;&#x591A;&#x6280;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x8BBE;&#x8BA1;&#x8FD9;&#x4E48;&#x590D;&#x6742;&#x7684;<code>&#x81EA;&#x5B9A;&#x4E49;Primitve</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x7136;&#x80FD;&#x7406;&#x89E3;&#x5E76;&#x53C2;&#x8003;<code>Cesium</code>&#x7684;&#x4EE3;&#x7801;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x663E;&#x9690;&#x63A7;&#x5236;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 class="mume-header" id="2-%E6%94%AF%E6%8C%81pick%E5%AE%9E%E7%8E%B0%E7%82%B9%E9%80%89">2&#x3001;&#x652F;&#x6301;pick&#x5B9E;&#x73B0;&#x70B9;&#x9009;</h3>
+
+<p>&#x8981;&#x7D20;&#x62FE;&#x53D6;&#x67E5;&#x8BE2;&#xFF08;<code>Pick</code>&#xFF09;&#xFF0C;&#x662F;3D&#x4EA4;&#x4E92;&#x7684;&#x91CD;&#x8981;&#x57FA;&#x7840;&#xFF0C;&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#x4E00;&#x4E2A;3D&#x5E94;&#x7528;&#xFF0C;&#x6240;&#x6709;&#x56FE;&#x5F62;&#x8981;&#x7D20;&#x600E;&#x4E48;&#x70B9;&#x51FB;&#x90FD;&#x6CA1;&#x6709;&#x53CD;&#x5E94;&#xFF0C;&#x90A3;&#x5B83;&#x8DDF;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x5668;&#x5C31;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x4E24;&#x6837;&#x4E86;&#xFF5E;</p>
+<p><code>Cesium</code>&#x63D0;&#x4F9B;&#x4E86;&#x7EDF;&#x4E00;&#x7684;&#x8981;&#x7D20;&#x62FE;&#x53D6;&#x67E5;&#x8BE2;&#x673A;&#x5236;&#xFF0C;&#x62FE;&#x53D6;API&#x5C01;&#x88C5;&#x5728;<code>Cesium.Scene</code>&#x4E2D;&#xFF0C;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;<code>3D&#x63CF;&#x8FB9;</code>&#x7B49;&#x540E;&#x671F;&#x5904;&#x7406;&#x65F6;&#x5C31;&#x66FE;&#x4F7F;&#x7528;&#x8FC7;&#xFF0C;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"> viewer<span class="token punctuation">.</span><span class="token property-access">screenSpaceEventHandler</span><span class="token punctuation">.</span><span class="token method function property-access">setInputAction</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> picked <span class="token operator">=</span> viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">pick</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">)</span>
+    <span class="token keyword control-flow keyword-if">if</span><span class="token punctuation">(</span>picked<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><p>&#x90A3;&#x4E48;&#x5982;&#x679C;&#x8BA9;&#x6211;&#x4EEC;&#x7684;<code>&#x81EA;&#x5B9A;&#x4E49;Primitive</code>&#x80FD;&#x591F;&#x88AB;<code>scene.pick</code>&#x70B9;&#x51FB;&#x62FE;&#x53D6;&#x5230;&#x5462;&#xFF1F;</p>
+<h4 class="mume-header" id="21-context%E5%88%9B%E5%BB%BApickid">2.1&#x3001;context&#x521B;&#x5EFA;pickId</h4>
+
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token doc-comment comment">/**
+ * <span class="token keyword keyword-@param">@param</span> <span class="token class-name"><span class="token punctuation">{</span>Cesium<span class="token punctuation">.</span>Context<span class="token punctuation">}</span></span> <span class="token parameter">context</span> 
+ */</span>
+<span class="token function">createCommand</span><span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token doc-comment comment">/**
+     * <span class="token keyword keyword-@type">@type</span> <span class="token class-name"><span class="token punctuation">{</span>Cesium<span class="token punctuation">.</span>PickId<span class="token punctuation">}</span></span>
+     */</span>
+    <span class="token keyword keyword-var">var</span> pickId <span class="token operator">=</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickId</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>pickId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        pickId <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token method function property-access">createPickId</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            primitive<span class="token operator">:</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">,</span>
+            description<span class="token operator">:</span> <span class="token string">&apos;&#x8981;&#x7D20;&#x63CF;&#x8FF0;&#x5185;&#x5BB9;&apos;</span><span class="token punctuation">,</span>
+            <span class="token comment">//[key:string]:any</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickId</span> <span class="token operator">=</span> pickId
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//</span>
+    <span class="token keyword keyword-var">var</span> strPickId <span class="token operator">=</span> <span class="token string">&apos;czm_pickColor&apos;</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-var">var</span> czm_pickColor <span class="token operator">=</span> pickId<span class="token punctuation">.</span><span class="token property-access">color</span><span class="token punctuation">;</span>
+    
+
+    <span class="token comment">//...</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="22-shader%E5%A3%B0%E6%98%8Epickid%E5%8F%98%E9%87%8F">2.2&#x3001;shader&#x58F0;&#x660E;pickId&#x53D8;&#x91CF;</h4>
+
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;<code>pickId</code>&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#x6709;&#x4E24;&#x79CD;&#xFF1A;<code>uniform</code>&#x548C;<code>varying</code>&#x3002;</p>
+<ul>
+<li><code>uinform</code>&#xFF1A;&#x5982;&#x679C;<code>DrawCommand</code>&#x7ED8;&#x5236;&#x7684;&#x662F;&#x5355;&#x4E00;&#x8981;&#x7D20;&#xFF0C;&#x6240;&#x7ED8;&#x5236;&#x7684;&#x5185;&#x5BB9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#xFF0C;&#x5219;&#x4F7F;&#x7528;<code>uniform</code>&#xFF0C;&#x6240;&#x6709;&#x9876;&#x70B9;&#x7684;pickId&#x989C;&#x8272;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x901A;&#x8FC7;<code>uniformMap</code>&#x6765;&#x4F20;&#x9012;&#xFF1B;</li>
+<li><code>varying</code>&#xFF1A;&#x5982;&#x679C;&#x7ED8;&#x5236;&#x7684;&#x662F;&#x591A;&#x4E2A;&#x8981;&#x7D20;&#xFF0C;&#x7ED8;&#x5236;&#x5185;&#x5BB9;&#x53EF;&#x80FD;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x90E8;&#x4EF6;&#xFF0C;&#x53EA;&#x662F;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x6279;&#x6B21;&#x6765;&#x6E32;&#x67D3;&#xFF0C;&#x53EF;&#x80FD;&#x6BCF;&#x4E2A;&#x90E8;&#x4EF6;&#x9700;&#x8981;&#x80FD;&#x591F;&#x88AB;&#x5355;&#x72EC;&#x70B9;&#x51FB;&#x62FE;&#x53D6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;<code>varying</code>&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x90E8;&#x4EF6;&#x8981;&#x7D20;&#x7684;<code>pickId</code>&#x989C;&#x8272;&#x5199;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x51E0;&#x4F55;&#x9876;&#x70B9;&#x5C5E;&#x6027;&#xFF0C;&#x9876;&#x70B9;&#x7740;&#x8272;&#x5668;&#x63A5;&#x6536;&#x989C;&#x8272;&#x503C;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;<code>varying</code>&#x4F20;&#x9012;&#x5230;&#x504F;&#x8FDC;&#x7740;&#x8272;&#x5668;&#x3002;</li>
+</ul>
+<h5 class="mume-header" id="221-uniform%E7%B1%BBpickid">2.2.1&#x3001;uniform&#x7C7B;pickId</h5>
+
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-var">var</span> fs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+uniform vec3 color; 
+//
+uniform vec4 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>strPickId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">; 
+void main(){
+    gl_FragColor=vec4( color , 1. );
+}
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> shaderProgram <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ShaderProgram</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromCache</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+    vertexShaderSource<span class="token operator">:</span> vs<span class="token punctuation">,</span>
+    fragmentShaderSource<span class="token operator">:</span> fs<span class="token punctuation">,</span>
+    attributeLocations<span class="token operator">:</span> attributeLocations
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><h5 class="mume-header" id="222-varying%E7%B1%BBpickid">2.2.2&#x3001; varying&#x7C7B;pickId</h5>
+
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-var">var</span> vs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+attribute vec3 position;
+//&#x58F0;&#x660E;pickColor&#x5C5E;&#x6027;&#xFF0C;&#x63A5;&#x6536;&#x9876;&#x70B9;pickId&#x989C;&#x8272;
+attribute vec4 pickColor;
+//
+varying vec4 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>strPickId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">; 
+void main(){
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>strPickId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">=pickColor; 
+    gl_Position = czm_projection  * czm_modelView * vec4( position , 1. );
+}
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> fs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+uniform vec3 color; 
+//
+varying vec4 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>strPickId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">; 
+void main(){
+    gl_FragColor=vec4( color , 1. );
+}
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword keyword-var">var</span> shaderProgram <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ShaderProgram</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromCache</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    context<span class="token operator">:</span> context<span class="token punctuation">,</span>
+    vertexShaderSource<span class="token operator">:</span> vs<span class="token punctuation">,</span>
+    fragmentShaderSource<span class="token operator">:</span> fs<span class="token punctuation">,</span>
+    attributeLocations<span class="token operator">:</span> attributeLocations
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><h5 class="mume-header" id="223-cesium%E5%AF%B9drawcommand%E7%9A%84%E5%90%8E%E7%BB%AD%E5%8A%A0%E5%B7%A5">2.2.3&#x3001;Cesium&#x5BF9;DrawCommand&#x7684;&#x540E;&#x7EED;&#x52A0;&#x5DE5;</h5>
+
+<p>&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x5F88;&#x597D;&#x5947;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;<code>pickId</code>&#x53D8;&#x91CF;&#xFF0C;&#x53EA;&#x662F;&#x58F0;&#x660E;&#xFF0C;&#x5374;&#x6CA1;&#x6709;&#x89C1;&#x5230;&#x5177;&#x4F53;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x600E;&#x4E48;&#x80FD;&#x5B9E;&#x73B0;&#x70B9;&#x51FB;&#x62FE;&#x53D6;&#x5462;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5927;&#x5BB6;&#x4E0D;&#x59A8;&#x5728;&#x7ED8;&#x5236;&#x51FA;&#x7ED3;&#x679C;&#x540E;&#xFF08;&#x5EF6;&#x8FDF;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF09;&#x6253;&#x5370;&#x51FA;<code>DrawCommand</code>&#x5BF9;&#x8C61;&#x770B;&#x770B;&#xFF1A;<br>
+<img src="./derivedCommands.png" alt="derivedCommands"></p>
+<p>&#x6211;&#x4EEC;&#x63A5;&#x7740;&#x5C55;&#x5F00;&#x770B;&#x770B;<code>pickCommand._shaderProgram._vertexShaderText</code>&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="glsl" class="language-glsl"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">GL_FRAGMENT_PRECISION_HIGH</span></span>
+    <span class="token keyword keyword-precision">precision</span> <span class="token keyword keyword-highp">highp</span> <span class="token keyword keyword-float">float</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">else</span></span>
+    <span class="token keyword keyword-precision">precision</span> <span class="token keyword keyword-mediump">mediump</span> <span class="token keyword keyword-float">float</span><span class="token punctuation">;</span>
+    <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">highp</span> <span class="token expression"><span class="token keyword keyword-mediump">mediump</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">OES_texture_float_linear</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">OES_texture_float</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">line</span> <span class="token expression"><span class="token number">0</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">line</span> <span class="token expression"><span class="token number">0</span></span></span>
+
+<span class="token keyword keyword-uniform">uniform</span> <span class="token keyword keyword-vec3">vec3</span> color<span class="token punctuation">;</span> 
+<span class="token keyword keyword-uniform">uniform</span> <span class="token keyword keyword-vec4">vec4</span> czm_pickColor<span class="token punctuation">;</span> 
+<span class="token keyword keyword-void">void</span> <span class="token function">czm_non_pick_main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    gl_FragColor<span class="token operator">=</span><span class="token keyword keyword-vec4">vec4</span><span class="token punctuation">(</span> color <span class="token punctuation">,</span> <span class="token number">1.</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+        
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">line</span> <span class="token expression"><span class="token number">0</span></span></span>
+<span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token punctuation">{</span> 
+    <span class="token function">czm_non_pick_main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>gl_FragColor<span class="token punctuation">.</span>a <span class="token operator">==</span> <span class="token number">0.0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword keyword-discard">discard</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    gl_FragColor <span class="token operator">=</span> czm_pickColor<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</pre><p><code>Cesium</code>&#x4E3A;<code>pick</code>&#x64CD;&#x4F5C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<code>DrawCommand</code>&#x526F;&#x672C;<code>pickCommand</code>&#xFF0C;&#x5E76;&#x4E14;&#x57FA;&#x4E8E;&#x6211;&#x4EEC;&#x7684;<code>shader</code>&#x8FDB;&#x884C;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#xFF0C;&#x5728;&#x65B0;&#x7684;<code>main&#x51FD;&#x6570;</code>&#x4F7F;&#x7528;&#x4E86;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x7684;<code>pickId</code>&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x4E0D;&#x6B62;&#x591A;&#x4E86;&#x4E00;&#x4E2A;<code>pickCommand</code>&#xFF0C;&#x8FD8;&#x589E;&#x52A0;&#x4E86;&#x597D;&#x51E0;&#x4E2A;&#x5176;&#x4ED6;<code>DrawCommand</code>&#x526F;&#x672C;&#xFF0C;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x597D;&#x7684;<code>DrawCommand</code>&#x5E76;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x6E32;&#x67D3;&#x9636;&#x6BB5;&#xFF0C;&#x800C;&#x662F;&#x8981;&#x7ECF;&#x8FC7;<code>Cesium</code>&#x6E32;&#x67D3;&#x5668;&#x8FDB;&#x884C;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#xFF0C;&#x624D;&#x6700;&#x7EC8;&#x4EA4;&#x4ED8;&#x6267;&#x884C;&#x6E32;&#x67D3;&#x3002;</p>
+<p>&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5F00;&#x542F;&#x4E86;&#x9634;&#x5F71;&#x90A3;&#x4E48;&#x4F1A;&#x4E0D;&#x4F1A;&#x53C8;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x5462;&#xFF1F;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x6211;&#x4EEC;&#x7559;&#x5230;&#x4E0B;&#x4E00;&#x7BC7;&#x6765;&#x63A2;&#x8BA8;&#x3002;</p>
+<h4 class="mume-header" id="23-%E4%BC%A0%E9%80%92pickid%E9%A2%9C%E8%89%B2">2.3&#x3001;&#x4F20;&#x9012;pickId&#x989C;&#x8272;</h4>
+
+<p>&#x4E0E;<code>2.2</code>&#x8282;&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x5982;&#x679C;<code>pickId</code>&#x53D8;&#x91CF;&#x4E3A;<code>uniform</code>&#x7C7B;&#xFF0C;&#x5219;&#x901A;&#x8FC7;<code>unformMap</code>&#x4F20;&#x9012;&#x5176;&#x989C;&#x8272;&#xFF0C;&#x5982;&#x679C;&#x4E3A;<code>varying</code>&#x5219;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x51E0;&#x4F55;&#x4F53;&#xFF0C;&#x589E;&#x52A0;<code>pickId</code>&#x989C;&#x8272;&#x76F8;&#x5173;&#x7684;&#x9876;&#x70B9;&#x5C5E;&#x6027;&#x3002;</p>
+<h5 class="mume-header" id="231-uniformmap%E4%BC%A0%E9%80%92">2.3.1&#x3001;uniformMap&#x4F20;&#x9012;</h5>
+
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"> <span class="token keyword keyword-var">var</span> uniformMap <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">color</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Color</span></span><span class="token punctuation">.</span><span class="token constant">GRAY</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//&#x5982;&#x679C;pickId&#x4E3A;uniform&#x7C7B;&#xFF0C;&#x5219;&#x8FD9;&#x91CC;&#x5FC5;&#x987B;&#x4F20;&#x9012;pickId&#x989C;&#x8272;&#xFF1B;&#x4E3A;varying&#x5219;&#x53EF;&#x4EE5;&#x53BB;&#x6389;&#xFF0C;&#x4E0D;&#x53BB;&#x6389;&#x4E5F;&#x4E0D;&#x5F71;&#x54CD;&#x4F7F;&#x7528;</span>
+    <span class="token punctuation">[</span>strPickId<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-return">return</span> czm_pickColor<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h5 class="mume-header" id="232-%E9%A1%B6%E7%82%B9%E5%B1%9E%E6%80%A7%E4%BC%A0%E9%80%92">2.3.2&#x3001;&#x9876;&#x70B9;&#x5C5E;&#x6027;&#x4F20;&#x9012;</h5>
+
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>2.1</code>&#x521B;&#x5EFA;&#x7684;<code>pickId</code>&#x5C31;&#x4E0D;&#x591F;&#x7528;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x8981;&#x7D20;&#x7684;&#x51E0;&#x4F55;&#x4F53;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>pickId</code>&#x3002;&#x6211;&#x4EEC;&#x5B9A;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x5904;&#x7406;&#x6BCF;&#x4E00;&#x4E2A;&#x8981;&#x7D20;&#x7684;&#x51E0;&#x4F55;&#x4F53;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token doc-comment comment">/**
+ * <span class="token keyword keyword-@param">@param</span> <span class="token class-name"><span class="token punctuation">{</span>object<span class="token punctuation">}</span></span> <span class="token parameter">feature</span> 
+ * <span class="token keyword keyword-@param">@param</span> <span class="token class-name"><span class="token punctuation">{</span>Cesium<span class="token punctuation">.</span>Geometry<span class="token punctuation">}</span></span> <span class="token parameter">geometry</span>
+ * <span class="token keyword keyword-@param">@param</span> <span class="token class-name"><span class="token punctuation">{</span>Cesium<span class="token punctuation">.</span>Context<span class="token punctuation">}</span></span> <span class="token parameter">context</span> 
+ */</span>
+<span class="token function">setPickId</span><span class="token punctuation">(</span><span class="token parameter">feature<span class="token punctuation">,</span> geometry<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x521B;&#x5EFA;pickId</span>
+    <span class="token keyword keyword-var">var</span> pickId <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token method function property-access">createPickId</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        feature<span class="token operator">:</span> feature<span class="token punctuation">,</span>
+        primitive<span class="token operator">:</span> <span class="token keyword keyword-this">this</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">//&#x4FDD;&#x5B58;pickId&#xFF0C;&#x7528;&#x4E8E;&#x540E;&#x671F;&#x5904;&#x7406;&#x3001;&#x91CA;&#x653E;&#x7B49;</span>
+    <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickIds</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>pickId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//&#x589E;&#x52A0;&#x51E0;&#x4F55;&#x9876;&#x70B9;&#x5C5E;&#x6027;pickColor&#xFF0C;&#x8FD9;&#x91CC;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x548C;&#x9876;&#x70B9;&#x7740;&#x8272;&#x5668;&#x91CC;&#x9762;&#x7684;&#x5BF9;&#x5E94;attribute&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x4E00;&#x81F4;</span>
+
+    <span class="token keyword keyword-var">var</span> ptCount <span class="token operator">=</span> geometry<span class="token punctuation">.</span><span class="token property-access">attributes</span><span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">.</span><span class="token property-access">values</span><span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">/</span> <span class="token number">3</span>
+    <span class="token keyword keyword-var">var</span> pickColors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> red<span class="token punctuation">,</span> green<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> alpha <span class="token punctuation">}</span> <span class="token operator">=</span> pickId<span class="token punctuation">.</span><span class="token property-access">color</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-let">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> ptCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        pickColors<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span> green<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> alpha<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    pickColors <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>pickColors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    geometry<span class="token punctuation">.</span><span class="token property-access">attributes</span><span class="token punctuation">.</span><span class="token property-access">pickColor</span> <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">GeometryAttribute</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        componentDatatype<span class="token operator">:</span> <span class="token maybe-class-name">ComponentDatatype</span><span class="token punctuation">.</span><span class="token constant">FLOAT</span><span class="token punctuation">,</span>
+        componentsPerAttribute<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+        normalize<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        values<span class="token operator">:</span> pickColors
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</pre><h4 class="mume-header" id="24-drawcommand%E6%8C%87%E5%AE%9Apickid%E5%8F%98%E9%87%8F%E5%90%8D">2.4&#x3001;drawCommand&#x6307;&#x5B9A;pickId&#x53D8;&#x91CF;&#x540D;</h4>
+
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span> <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>DrawCommand</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    modelMatrix<span class="token operator">:</span> modelMatrix<span class="token punctuation">,</span>
+    vertexArray<span class="token operator">:</span> va<span class="token punctuation">,</span>
+    shaderProgram<span class="token operator">:</span> shaderProgram<span class="token punctuation">,</span>
+    uniformMap<span class="token operator">:</span> uniformMap<span class="token punctuation">,</span>
+    renderState<span class="token operator">:</span> renderState<span class="token punctuation">,</span>
+    pass<span class="token operator">:</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Pass</span></span><span class="token punctuation">.</span><span class="token constant">OPAQUE</span><span class="token punctuation">,</span>
+    <span class="token comment">//</span>
+    pickId<span class="token operator">:</span> strPickId
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="25-%E9%87%8A%E6%94%BEpickid">2.5&#x3001;&#x91CA;&#x653E;pickId</h4>
+
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;<code>pickId</code>&#x6216;&#x8005;<code>drawCommand</code>&#x91CA;&#x653E;&#x6216;&#x8005;&#x6574;&#x4E2A;<code>Primitive</code>&#x91CA;&#x653E;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;<code>&#x91CA;&#x653E;pickId</code>&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4F1A;&#x5C06;primitive&#x5BF9;&#x8C61;&#x7ED1;&#x5B9A;&#x5230;pickId&#xFF0C;&#x8FD9;&#x4E2A;pickId&#x4E0D;&#x91CA;&#x653E;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x4E00;&#x76F4;&#x4FDD;&#x5B58;&#x5728;<code>context</code>&#x7684;&#x7F13;&#x5B58;&#x91CC;&#xFF0C;&#x76F4;&#x5230;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x6D88;&#x4EA1;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5B8C;&#x6574;&#x7684;drawCommandd&#x91CA;&#x653E;&#x65B9;&#x6CD5;&#xFF0C;&#x5305;&#x542B;&#x4E86;pickId&#x7684;&#x91CA;&#x653E;&#x3002;</p>
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> drawCommand <span class="token operator">=</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>drawCommand<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-var">var</span> va <span class="token operator">=</span> drawCommand<span class="token punctuation">.</span><span class="token property-access">vertexArray</span><span class="token punctuation">,</span> sp <span class="token operator">=</span> drawCommand<span class="token punctuation">.</span><span class="token property-access">shaderProgram</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>va<span class="token punctuation">.</span><span class="token method function property-access">isDestroyed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> va<span class="token punctuation">.</span><span class="token method function property-access">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>sp<span class="token punctuation">.</span><span class="token property-access">isDestroyed</span> <span class="token operator">||</span> <span class="token operator">!</span>sp<span class="token punctuation">.</span><span class="token method function property-access">isDestroyed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            sp<span class="token punctuation">.</span><span class="token method function property-access">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        drawCommand<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">isDestroyed</span> <span class="token operator">=</span> <span class="token keyword keyword-function">function</span> <span class="token function">returnTrue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword control-flow keyword-return">return</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        drawCommand<span class="token punctuation">.</span><span class="token property-access">uniformMap</span> <span class="token operator">=</span> <span class="token keyword nil keyword-undefined">undefined</span><span class="token punctuation">;</span>
+        drawCommand<span class="token punctuation">.</span><span class="token property-access">renderState</span> <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">RenderState</span></span><span class="token punctuation">.</span><span class="token method function property-access">removeFromCache</span><span class="token punctuation">(</span>drawCommand<span class="token punctuation">.</span><span class="token property-access">renderState</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">drawCommand</span><span class="token operator">=</span><span class="token keyword null nil keyword-null">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//&#x5355;&#x4E2A;&#x8981;&#x7D20;&#x7684;pickId</span>
+    <span class="token keyword control-flow keyword-if">if</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickId</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickId</span><span class="token punctuation">.</span><span class="token method function property-access">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickId</span><span class="token operator">=</span><span class="token keyword null nil keyword-null">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//&#x591A;&#x4E2A;&#x8981;&#x7D20;&#x7684;pickId</span>
+    <span class="token keyword control-flow keyword-if">if</span><span class="token punctuation">(</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickIds</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickIds</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">pickId</span><span class="token arrow operator">=&gt;</span><span class="token punctuation">{</span>
+            pickId<span class="token punctuation">.</span><span class="token method function property-access">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">pickIds</span><span class="token punctuation">.</span><span class="token property-access">length</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="3-%E7%82%B9%E9%80%89%E7%A4%BA%E4%BE%8B%E5%8F%8A%E6%95%88%E6%9E%9C%E8%A7%86%E9%A2%91">3&#x3001;&#x70B9;&#x9009;&#x793A;&#x4F8B;&#x53CA;&#x6548;&#x679C;&#x89C6;&#x9891;</h3>
+
+<pre data-role="codeBlock" data-info="JavaScript" class="language-javascript"><span class="token keyword keyword-var">var</span> origin <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Cartesian3</span></span><span class="token punctuation">.</span><span class="token method function property-access">fromDegrees</span><span class="token punctuation">(</span><span class="token number">106</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">250000</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> modelMatrix <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Transforms</span></span><span class="token punctuation">.</span><span class="token method function property-access">eastNorthUpToFixedFrame</span><span class="token punctuation">(</span>origin<span class="token punctuation">)</span>
+<span class="token keyword keyword-var">var</span> primitive <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MyPrimitive</span><span class="token punctuation">(</span>modelMatrix<span class="token punctuation">)</span><span class="token punctuation">;</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token property-access">primitives</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>primitive<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x62FE;&#x53D6;&#x7ED3;&#x679C;&#x9AD8;&#x4EAE;</span>
+<span class="token keyword keyword-var">var</span> edgedStage <span class="token operator">=</span> <span class="token function">createEdgeStage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+edgedStage<span class="token punctuation">.</span><span class="token property-access">uniforms</span><span class="token punctuation">.</span><span class="token property-access">useSingleColor</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+edgedStage<span class="token punctuation">.</span><span class="token property-access">visibleEdgeColor</span> <span class="token operator">=</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Color</span></span><span class="token punctuation">.</span><span class="token constant">DARKORANGE</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">postProcessStages</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span>edgedStage<span class="token punctuation">)</span>
+
+<span class="token comment">//&#x6D4B;&#x8BD5;pick</span>
+viewer<span class="token punctuation">.</span><span class="token property-access">screenSpaceEventHandler</span><span class="token punctuation">.</span><span class="token method function property-access">setInputAction</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> picked <span class="token operator">=</span> viewer<span class="token punctuation">.</span><span class="token property-access">scene</span><span class="token punctuation">.</span><span class="token method function property-access">pick</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">)</span>
+
+    viewer<span class="token punctuation">.</span><span class="token property-access">selectedEntity</span> <span class="token operator">=</span> <span class="token keyword nil keyword-undefined">undefined</span>
+    edgedStage<span class="token punctuation">.</span><span class="token property-access">selected</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>picked <span class="token operator">&amp;&amp;</span> picked<span class="token punctuation">.</span><span class="token property-access">primitive</span> <span class="token operator">&amp;&amp;</span> picked<span class="token punctuation">.</span><span class="token property-access">primitive</span> <span class="token keyword keyword-instanceof">instanceof</span> <span class="token class-name">MyPrimitive</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        viewer<span class="token punctuation">.</span><span class="token property-access">selectedEntity</span> <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Cesium<span class="token punctuation">.</span>Entity</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            name<span class="token operator">:</span> <span class="token string">&quot;&#x62FE;&#x53D6;&#x7ED3;&#x679C;&quot;</span><span class="token punctuation">,</span>
+            description<span class="token operator">:</span> picked<span class="token punctuation">.</span><span class="token property-access">description</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        edgedStage<span class="token punctuation">.</span><span class="token property-access">selected</span> <span class="token operator">=</span> <span class="token punctuation">[</span>picked<span class="token punctuation">.</span><span class="token property-access">primitive</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Cesium</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ScreenSpaceEventType</span></span><span class="token punctuation">.</span><span class="token constant">LEFT_CLICK</span><span class="token punctuation">)</span>
+</pre><p>
+    <video style="max-width:100%" id="video" controls preload="none" poster="./drawCommand3.png">
+        <source id="mp4" src="uniform.mp4" type="video/mp4">
+    </video>
+</p>
+<p>&#x6709;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x52A0;&#x5165;<code>pickId</code>&#x4E4B;&#x540E;&#xFF0C;&#x4E0D;&#x4F46;&#x70B9;&#x51FB;&#x62FE;&#x53D6;&#x67E5;&#x8BE2;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x5305;&#x62EC;&#x540E;&#x671F;&#x5904;&#x7406;&#x9AD8;&#x4EAE;&#x4E5F;&#x81EA;&#x7136;&#x652F;&#x6301;&#x4E86;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;Cesium&#x540E;&#x671F;&#x5904;&#x7406;&#x7684;&#x8981;&#x7D20;&#x9009;&#x62E9;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;<code>pickId</code>&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<blockquote>
+<p>&#x672C;&#x7BC7;&#x5230;&#x6B64;&#x7ED3;&#x675F;&#xFF0C;&#x5982;&#x679C;&#x89C9;&#x5F97;&#x6709;&#x7528;&#xFF0C;&#x4E0D;&#x59A8;&#x70B9;&#x8D5E;+&#x5206;&#x4EAB;&#xFF0C;&#x8BA9;&#x66F4;&#x591A;&#x5C0F;&#x4F19;&#x4F34;&#x4E00;&#x8D77;&#x6765;&#x4EA4;&#x6D41;&#x5B66;&#x4E60;&#x5427;&#xFF01;<br>
+&#x4E0B;&#x4E00;&#x7BC7;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x9634;&#x5F71;&#xFF08;shadows&#xFF09;&#x548C;&#x5B9E;&#x4F8B;&#x5316;&#xFF08;instancing&#xFF09;&#xFF0C;&#x656C;&#x8BF7;&#x671F;&#x5F85;&#xFF01;</p>
+</blockquote>
+<h3 class="mume-header" id="%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%89%E7%BB%B4%E7%BD%91%E6%A0%BC3d%E7%AC%AC%E4%B8%80%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E6%96%87%E7%AB%A0">&#x6B22;&#x8FCE;&#x5173;&#x6CE8;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x3010;&#x4E09;&#x7EF4;&#x7F51;&#x683C;3D&#x3011;&#xFF0C;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x6587;&#x7AE0;</h3>
+
+<p><img src="http://os.mesh-3d.com/articles/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E3%80%90%E4%B8%89%E7%BB%B4%E7%BD%91%E6%A0%BC3D%E3%80%91.png" alt="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x3010;&#x4E09;&#x7EF4;&#x7F51;&#x683C;3D&#x3011;"></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
